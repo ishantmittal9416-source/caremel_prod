@@ -45,12 +45,6 @@
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        }
-                    }
                 }
             }
         }
@@ -113,43 +107,23 @@
 <body class="bg-slate-50 text-slate-800">
 
     <!-- ============================================== -->
-    <!-- NAVIGATION (Fixed) -->
+    <!-- NAVIGATION -->
     <!-- ============================================== -->
     <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
             <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 group cursor-pointer">
                 <div class="font-bold text-2xl tracking-tighter text-slate-900">
                     <span class="text-indigo-600">C</span>aremel<span class="text-indigo-600">.</span>
                 </div>
             </a>
-            
-            <!-- Center Tabs -->
             <div class="hidden md:flex items-center space-x-1 p-1 bg-slate-100/50 rounded-full border border-slate-200/50 backdrop-blur-sm">
-                <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-indigo-600 bg-white shadow-sm">
-                    Concept
-                </button>
-                <button onclick="switchPage('curriculum')" id="nav-curriculum" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-slate-500 hover:text-indigo-600">
-                    Syllabus
-                </button>
-                <button onclick="switchPage('resources')" id="nav-resources" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-slate-500 hover:text-indigo-600">
-                    Worksheets
-                </button>
+                <button onclick="switchPage('home')" id="nav-home" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-indigo-600 bg-white shadow-sm">Concept</button>
+                <button onclick="switchPage('curriculum')" id="nav-curriculum" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-slate-500 hover:text-indigo-600">Syllabus</button>
+                <button onclick="switchPage('resources')" id="nav-resources" class="nav-btn px-6 py-2 text-sm font-bold rounded-full transition-all text-slate-500 hover:text-indigo-600">Worksheets</button>
             </div>
-
-            <!-- CTA -->
-            <a href="#contact" class="hidden md:block px-5 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-full hover:bg-indigo-600 transition shadow-lg shadow-indigo-500/20">
-                Book Demo
-            </a>
-            
-            <!-- Mobile Menu Toggle -->
-            <button class="md:hidden text-slate-800 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            <a href="#contact" class="hidden md:block px-5 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-full hover:bg-indigo-600 transition shadow-lg shadow-indigo-500/20">Book Demo</a>
+            <button class="md:hidden text-slate-800 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fas fa-bars text-xl"></i></button>
         </div>
-        
-        <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 p-4 shadow-xl">
             <div class="flex flex-col space-y-4">
                 <button onclick="switchPage('home'); document.getElementById('mobile-menu').classList.add('hidden')" class="text-left font-bold text-slate-600">Concept</button>
@@ -160,124 +134,58 @@
     </nav>
 
     <!-- ============================================== -->
-    <!-- VIEW: HOME (Main Website Content) -->
+    <!-- VIEW: HOME -->
     <!-- ============================================== -->
     <main id="view-home" class="view-section active">
-        <!-- Hero Section -->
         <header class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-slate-900 text-white">
             <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px] animate-pulse-slow"></div>
             <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px]"></div>
-
             <div class="max-w-7xl mx-auto px-6 relative z-10 text-center" data-aos="fade-up">
                 <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8">
                     <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
                     <span class="text-xs font-bold tracking-wide uppercase text-slate-300">NEP 2020 & SEWA Compliant</span>
                 </div>
-                
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Bridge the Gap Between<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-teal-400">Academics & Life.</span>
-                </h1>
-                
-                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                    A structured curriculum integrating <span class="text-white font-medium">Life Skills, Values, and Entrepreneurship</span> into your school's timetable. From Grade 6 identity work to Grade 12 capstone projects.
-                </p>
-                
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">Bridge the Gap Between<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-teal-400">Academics & Life.</span></h1>
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">A structured curriculum integrating <span class="text-white font-medium">Life Skills, Values, and Entrepreneurship</span> into your school's timetable. From Grade 6 identity work to Grade 12 capstone projects.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button onclick="switchPage('curriculum')" class="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-indigo-50 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                        Explore Syllabus
-                    </button>
-                    <button onclick="switchPage('resources')" class="px-8 py-4 border border-slate-700 text-white rounded-full font-semibold hover:bg-white/10 transition backdrop-blur-sm">
-                        View Sample Worksheets
-                    </button>
+                    <button onclick="switchPage('curriculum')" class="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-indigo-50 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">Explore Syllabus</button>
+                    <button onclick="switchPage('resources')" class="px-8 py-4 border border-slate-700 text-white rounded-full font-semibold hover:bg-white/10 transition backdrop-blur-sm">View Sample Worksheets</button>
                 </div>
             </div>
         </header>
 
-        <!-- The Iceberg -->
         <section id="iceberg" class="py-24 bg-slate-900 relative overflow-hidden border-t border-slate-800">
             <div class="max-w-6xl mx-auto px-6">
                 <div class="text-center mb-16" data-aos="fade-up">
                     <span class="text-teal-400 font-bold uppercase tracking-wider text-xs">The Hidden Curriculum</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">The Caremel Iceberg</h2>
-                    <p class="text-slate-400 mt-4 max-w-lg mx-auto">
-                        Most school systems focus on the tip. We dive deeper. <br>
-                        <span class="text-teal-400 animate-pulse text-sm font-bold"><i class="fas fa-hand-pointer mr-2"></i>Hover over the iceberg sections.</span>
-                    </p>
+                    <p class="text-slate-400 mt-4 max-w-lg mx-auto">Most school systems focus on the tip. We dive deeper.<br><span class="text-teal-400 animate-pulse text-sm font-bold"><i class="fas fa-hand-pointer mr-2"></i>Hover over the iceberg sections.</span></p>
                 </div>
-
                 <div class="relative h-[600px] w-full max-w-5xl mx-auto shadow-2xl rounded-xl overflow-hidden" data-aos="zoom-in">
-                    <!-- Tooltips -->
-                    <div id="tip-tooltip" class="tooltip-card top-[15%] left-[65%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-indigo-500">
-                        <h4 class="font-bold text-slate-900 mb-1">The Visible (10%)</h4>
-                        <p class="text-sm text-slate-600">Grades, Test Scores. The technical "hard skills" schools traditionally measure.</p>
-                    </div>
-                    <div id="shallow-tooltip" class="tooltip-card top-[48%] left-[10%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-teal-500">
-                        <h4 class="font-bold text-slate-900 mb-1">Behavioral Skills</h4>
-                        <p class="text-sm text-slate-600">Communication, Collaboration, Conflict Resolution.</p>
-                    </div>
-                    <div id="deep-tooltip" class="tooltip-card top-[75%] left-[60%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-purple-500">
-                        <h4 class="font-bold text-slate-900 mb-1">Core Identity</h4>
-                        <p class="text-sm text-slate-600">Values, Ethics, Resilience, Purpose. The foundation of success.</p>
-                    </div>
-
-                    <!-- SVG ICEBERG -->
+                    <div id="tip-tooltip" class="tooltip-card top-[15%] left-[65%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-indigo-500"><h4 class="font-bold text-slate-900 mb-1">The Visible (10%)</h4><p class="text-sm text-slate-600">Grades, Test Scores. The technical "hard skills" schools traditionally measure.</p></div>
+                    <div id="shallow-tooltip" class="tooltip-card top-[48%] left-[10%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-teal-500"><h4 class="font-bold text-slate-900 mb-1">Behavioral Skills</h4><p class="text-sm text-slate-600">Communication, Collaboration, Conflict Resolution.</p></div>
+                    <div id="deep-tooltip" class="tooltip-card top-[75%] left-[60%] bg-white p-6 rounded-xl shadow-2xl max-w-xs border-l-4 border-purple-500"><h4 class="font-bold text-slate-900 mb-1">Core Identity</h4><p class="text-sm text-slate-600">Values, Ethics, Resilience, Purpose. The foundation of success.</p></div>
                     <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" class="w-full h-full block">
-                        <rect x="0" y="0" width="800" height="240" fill="#D3D3D3" />
-                        <rect x="0" y="240" width="800" height="360" fill="#0B2B48" />
-                        <g id="ice-tip" class="ice-group" onmouseenter="showTooltip('tip')" onmouseleave="hideTooltip()">
-                            <polygon points="350,240 400,60 460,240" fill="#2F6F7E" class="ice-poly" />
-                            <polygon points="400,60 460,240 480,200" fill="#254E6D" class="ice-poly" />
-                            <polygon points="350,240 460,240 420,180" fill="#3A8A9E" opacity="0.5" class="ice-poly" />
-                        </g>
+                        <rect x="0" y="0" width="800" height="240" fill="#D3D3D3" /><rect x="0" y="240" width="800" height="360" fill="#0B2B48" />
+                        <g id="ice-tip" class="ice-group" onmouseenter="showTooltip('tip')" onmouseleave="hideTooltip()"><polygon points="350,240 400,60 460,240" fill="#2F6F7E" class="ice-poly" /><polygon points="400,60 460,240 480,200" fill="#254E6D" class="ice-poly" /><polygon points="350,240 460,240 420,180" fill="#3A8A9E" opacity="0.5" class="ice-poly" /></g>
                         <line x1="0" y1="240" x2="800" y2="240" stroke="white" stroke-width="4" opacity="0.9" />
-                        <g id="ice-shallow" class="ice-group" onmouseenter="showTooltip('shallow')" onmouseleave="hideTooltip()">
-                            <polygon points="320,242 490,242 470,350 340,330" fill="#3C3F42" class="ice-poly" />
-                            <polygon points="490,242 520,280 470,350" fill="#2A4B55" class="ice-poly" />
-                        </g>
-                        <g id="ice-deep" class="ice-group" onmouseenter="showTooltip('deep')" onmouseleave="hideTooltip()">
-                            <polygon points="340,330 410,400 380,550" fill="#2A4B55" class="ice-poly" />
-                            <polygon points="410,400 470,350 440,520 380,550" fill="#1F3A42" class="ice-poly" />
-                        </g>
+                        <g id="ice-shallow" class="ice-group" onmouseenter="showTooltip('shallow')" onmouseleave="hideTooltip()"><polygon points="320,242 490,242 470,350 340,330" fill="#3C3F42" class="ice-poly" /><polygon points="490,242 520,280 470,350" fill="#2A4B55" class="ice-poly" /></g>
+                        <g id="ice-deep" class="ice-group" onmouseenter="showTooltip('deep')" onmouseleave="hideTooltip()"><polygon points="340,330 410,400 380,550" fill="#2A4B55" class="ice-poly" /><polygon points="410,400 470,350 440,520 380,550" fill="#1F3A42" class="ice-poly" /></g>
                     </svg>
                 </div>
             </div>
         </section>
 
-        <!-- Charts Section (UPDATED WITH LINKS) -->
         <section id="data" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div data-aos="fade-right">
                         <h2 class="text-3xl font-bold text-slate-900 mb-6">The 85% Reality Gap</h2>
-                        <p class="text-slate-600 mb-8 leading-relaxed">
-                            Schools invest 95% of resources into technical skills. However, data from Harvard & Stanford reveals a stark disconnect.
-                        </p>
+                        <p class="text-slate-600 mb-8 leading-relaxed">Schools invest 95% of resources into technical skills. However, data from Harvard & Stanford reveals a stark disconnect.</p>
                         <div class="space-y-4">
-                            <!-- Link 1 -->
-                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-indigo-200 transition group">
-                                <h4 class="font-bold text-slate-800 text-lg mb-1">The 85/15 Rule</h4>
-                                <p class="text-sm text-slate-500 mb-3">85% of job success comes from soft skills, only 15% from technical skills.</p>
-                                <a href="https://www.nationalsoftskills.org/the-soft-skills-disconnect/" target="_blank" class="inline-flex items-center text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline">
-                                    View Harvard/Stanford Study <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
-                             <!-- Link 2 -->
-                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-teal-200 transition group">
-                                <h4 class="font-bold text-slate-800 text-lg mb-1">Project Aristotle</h4>
-                                <p class="text-sm text-slate-500 mb-3">Google found "Psychological Safety" was the #1 predictor of team success.</p>
-                                <a href="https://rework.withgoogle.com/print/guides/5721312655835136/" target="_blank" class="inline-flex items-center text-xs font-bold text-teal-600 uppercase tracking-wider group-hover:underline">
-                                    View Google Research <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
-                             <!-- Link 3 -->
-                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-orange-200 transition group">
-                                <h4 class="font-bold text-slate-800 text-lg mb-1">The Skills Gap</h4>
-                                <p class="text-sm text-slate-500 mb-3">Employers rate "Critical Thinking" as 99% essential, but find only 55% of grads proficient.</p>
-                                <a href="https://www.naceweb.org/job-market/trends-and-predictions/job-outlook-2024/" target="_blank" class="inline-flex items-center text-xs font-bold text-orange-600 uppercase tracking-wider group-hover:underline">
-                                    View NACE Job Outlook <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </div>
+                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-indigo-200 transition group"><h4 class="font-bold text-slate-800 text-lg mb-1">The 85/15 Rule</h4><p class="text-sm text-slate-500 mb-3">85% of job success comes from soft skills, only 15% from technical skills.</p><a href="https://www.nationalsoftskills.org/the-soft-skills-disconnect/" target="_blank" class="inline-flex items-center text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline">View Harvard/Stanford Study <i class="fas fa-external-link-alt ml-2"></i></a></div>
+                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-teal-200 transition group"><h4 class="font-bold text-slate-800 text-lg mb-1">Project Aristotle</h4><p class="text-sm text-slate-500 mb-3">Google found "Psychological Safety" was the #1 predictor of team success.</p><a href="https://rework.withgoogle.com/print/guides/5721312655835136/" target="_blank" class="inline-flex items-center text-xs font-bold text-teal-600 uppercase tracking-wider group-hover:underline">View Google Research <i class="fas fa-external-link-alt ml-2"></i></a></div>
+                            <div class="p-5 bg-slate-50 rounded-xl border border-slate-100 hover:border-orange-200 transition group"><h4 class="font-bold text-slate-800 text-lg mb-1">The Skills Gap</h4><p class="text-sm text-slate-500 mb-3">Employers rate "Critical Thinking" as 99% essential, but find only 55% of grads proficient.</p><a href="https://www.naceweb.org/job-market/trends-and-predictions/job-outlook-2024/" target="_blank" class="inline-flex items-center text-xs font-bold text-orange-600 uppercase tracking-wider group-hover:underline">View NACE Job Outlook <i class="fas fa-external-link-alt ml-2"></i></a></div>
                         </div>
                     </div>
                     <div class="bg-white rounded-3xl shadow-2xl border border-slate-100 p-8 h-[500px] flex flex-col" data-aos="fade-left">
@@ -285,65 +193,26 @@
                             <button onclick="switchChart('success')" id="tab-success" class="flex-1 py-2 text-sm font-bold rounded-md bg-white text-indigo-600 shadow-sm transition">Success Drivers</button>
                             <button onclick="switchChart('gap')" id="tab-gap" class="flex-1 py-2 text-sm font-bold rounded-md text-slate-500 hover:bg-white/50 transition">Competency Gap</button>
                         </div>
-                        <div class="relative flex-grow w-full">
-                            <canvas id="mainChart"></canvas>
-                        </div>
+                        <div class="relative flex-grow w-full"><canvas id="mainChart"></canvas></div>
                          <p id="chart-caption" class="text-center text-xs text-slate-400 mt-4">Data aggregated from Harvard University & Carnegie Foundation research.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Research Frameworks (RESTORED ALL 5) -->
         <section id="frameworks" class="py-24 bg-slate-50 border-y border-slate-200">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-indigo-600 font-bold uppercase tracking-wider text-xs bg-indigo-100 px-3 py-1 rounded-full">Backed by Science</span>
-                    <h2 class="text-3xl font-bold text-slate-900 mt-4">Global Research Frameworks</h2>
-                    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">We apply the best global standards to your classroom context.</p>
-                </div>
+                <div class="text-center mb-16" data-aos="fade-up"><span class="text-indigo-600 font-bold uppercase tracking-wider text-xs bg-indigo-100 px-3 py-1 rounded-full">Backed by Science</span><h2 class="text-3xl font-bold text-slate-900 mt-4">Global Research Frameworks</h2><p class="text-slate-500 mt-4 max-w-2xl mx-auto">We apply the best global standards to your classroom context.</p></div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Harvard -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up">
-                        <div class="w-12 h-12 bg-red-50 text-red-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">H</div>
-                        <h3 class="text-xl font-bold text-slate-900">Harvard University</h3>
-                        <p class="text-xs font-bold text-red-600 uppercase mb-4">EASEL Lab</p>
-                        <ul class="text-sm text-slate-600 space-y-2"><li>• Cognitive Regulation</li><li>• Emotion Processes</li><li>• Ethical Values</li></ul>
-                    </div>
-                    <!-- Yale -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">Y</div>
-                        <h3 class="text-xl font-bold text-slate-900">Yale University</h3>
-                        <p class="text-xs font-bold text-blue-600 uppercase mb-4">RULER Method</p>
-                        <ul class="text-sm text-slate-600 space-y-2"><li>• Recognizing Emotions</li><li>• Understanding Triggers</li><li>• Regulating Response</li></ul>
-                    </div>
-                    <!-- UPenn (Restored) -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 bg-indigo-50 text-indigo-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">P</div>
-                        <h3 class="text-xl font-bold text-slate-900">UPenn</h3>
-                        <p class="text-xs font-bold text-indigo-600 uppercase mb-4">PERMA Framework</p>
-                        <ul class="text-sm text-slate-600 space-y-2"><li>• Positive Emotion</li><li>• Relationships</li><li>• Meaning & Accomplishment</li></ul>
-                    </div>
-                     <!-- Stanford (Restored) -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-12 h-12 bg-red-50 text-red-800 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">S</div>
-                        <h3 class="text-xl font-bold text-slate-900">Stanford University</h3>
-                        <p class="text-xs font-bold text-red-600 uppercase mb-4">William Damon</p>
-                        <p class="text-sm text-slate-600">The Path to Purpose: Helping young people find their calling in life.</p>
-                    </div>
-                    <!-- UNESCO -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 md:col-span-2" data-aos="fade-up" data-aos-delay="400">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-xl font-bold"><i class="fas fa-globe"></i></div>
-                            <div><h3 class="text-xl font-bold text-slate-900">UNESCO MGIEP</h3><p class="text-xs font-bold text-blue-600 uppercase">EMC² Framework</p></div>
-                        </div>
-                        <ul class="text-sm text-slate-600 space-y-2 grid grid-cols-2"><li>• Empathy & Compassion</li><li>• Critical Inquiry</li><li>• Global Citizenship</li><li>• Mindfulness</li></ul>
-                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up"><div class="w-12 h-12 bg-red-50 text-red-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">H</div><h3 class="text-xl font-bold text-slate-900">Harvard University</h3><p class="text-xs font-bold text-red-600 uppercase mb-4">EASEL Lab</p><ul class="text-sm text-slate-600 space-y-2"><li>• Cognitive Regulation</li><li>• Emotion Processes</li><li>• Ethical Values</li></ul></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="100"><div class="w-12 h-12 bg-blue-50 text-blue-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">Y</div><h3 class="text-xl font-bold text-slate-900">Yale University</h3><p class="text-xs font-bold text-blue-600 uppercase mb-4">RULER Method</p><ul class="text-sm text-slate-600 space-y-2"><li>• Recognizing Emotions</li><li>• Understanding Triggers</li><li>• Regulating Response</li></ul></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="200"><div class="w-12 h-12 bg-indigo-50 text-indigo-900 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">P</div><h3 class="text-xl font-bold text-slate-900">UPenn</h3><p class="text-xs font-bold text-indigo-600 uppercase mb-4">PERMA Framework</p><ul class="text-sm text-slate-600 space-y-2"><li>• Positive Emotion</li><li>• Relationships</li><li>• Meaning & Accomplishment</li></ul></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100" data-aos="fade-up" data-aos-delay="300"><div class="w-12 h-12 bg-red-50 text-red-800 rounded-lg flex items-center justify-center text-xl font-serif font-bold mb-6">S</div><h3 class="text-xl font-bold text-slate-900">Stanford University</h3><p class="text-xs font-bold text-red-600 uppercase mb-4">William Damon</p><p class="text-sm text-slate-600">The Path to Purpose: Helping young people find their calling in life.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 md:col-span-2" data-aos="fade-up" data-aos-delay="400"><div class="flex items-center gap-4 mb-4"><div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-xl font-bold"><i class="fas fa-globe"></i></div><div><h3 class="text-xl font-bold text-slate-900">UNESCO MGIEP</h3><p class="text-xs font-bold text-blue-600 uppercase">EMC² Framework</p></div></div><ul class="text-sm text-slate-600 space-y-2 grid grid-cols-2"><li>• Empathy & Compassion</li><li>• Critical Inquiry</li><li>• Global Citizenship</li><li>• Mindfulness</li></ul></div>
                 </div>
             </div>
         </section>
 
-        <!-- HPC Section (RESTORED EXACTLY) -->
         <section id="hpc" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -353,79 +222,30 @@
                         <p class="text-slate-600 mb-8">Select a grade to see how we measure what matters. We move beyond marks to measure <strong>Grit and Ethics.</strong></p>
                         <div class="p-6 bg-slate-900 rounded-2xl text-white shadow-xl">
                             <label class="block text-xs font-bold text-slate-400 uppercase mb-3">Select Grade Level</label>
-                            <select id="hpc-grade-select" onchange="loadHPCRubric()" class="w-full p-3 bg-slate-800 border border-slate-700 rounded-xl text-sm font-bold text-white outline-none">
-                                <option value="6">Grade 6: Self Discovery</option>
-                                <option value="7">Grade 7: Social Navigation</option>
-                                <option value="8">Grade 8: Ethics & Identity</option>
-                                <option value="9">Grade 9: Service & Society</option>
-                                <option value="10">Grade 10: Integration</option>
-                                <option value="11">Grade 11: Professionalism</option>
-                                <option value="12">Grade 12: Adult Readiness</option>
-                            </select>
-                            <div class="mt-6 pt-6 border-t border-slate-700 flex justify-between items-center">
-                                <div><div class="text-xs text-slate-400 font-bold uppercase">Total Score</div></div>
-                                <div class="text-4xl font-bold text-teal-400"><span id="hpc-score">0</span><span class="text-lg text-slate-500 font-normal">/12</span></div>
-                            </div>
+                            <select id="hpc-grade-select" onchange="loadHPCRubric()" class="w-full p-3 bg-slate-800 border border-slate-700 rounded-xl text-sm font-bold text-white outline-none"><option value="6">Grade 6: Self Discovery</option><option value="7">Grade 7: Social Navigation</option><option value="8">Grade 8: Ethics & Identity</option><option value="9">Grade 9: Service & Society</option><option value="10">Grade 10: Integration</option><option value="11">Grade 11: Professionalism</option><option value="12">Grade 12: Adult Readiness</option></select>
+                            <div class="mt-6 pt-6 border-t border-slate-700 flex justify-between items-center"><div><div class="text-xs text-slate-400 font-bold uppercase">Total Score</div></div><div class="text-4xl font-bold text-teal-400"><span id="hpc-score">0</span><span class="text-lg text-slate-500 font-normal">/12</span></div></div>
                         </div>
                     </div>
                     <div class="lg:col-span-8 bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col" data-aos="fade-left">
-                        <div class="p-0 overflow-x-auto">
-                            <table class="w-full text-left border-collapse">
-                                <thead>
-                                    <tr class="bg-slate-50/50">
-                                        <th class="p-4 text-xs font-bold text-slate-500 uppercase w-1/4">Competency</th>
-                                        <th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L1: Emerging</th>
-                                        <th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L2: Developing</th>
-                                        <th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L3: Proficient</th>
-                                        <th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L4: Advanced</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="hpc-tbody"></tbody>
-                            </table>
-                        </div>
-                        <div id="hpc-feedback-box" class="m-6 p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-500 italic">
-                            Select ratings above to generate holistic remarks...
-                        </div>
+                        <div class="p-0 overflow-x-auto"><table class="w-full text-left border-collapse"><thead><tr class="bg-slate-50/50"><th class="p-4 text-xs font-bold text-slate-500 uppercase w-1/4">Competency</th><th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L1: Emerging</th><th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L2: Developing</th><th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L3: Proficient</th><th class="p-4 text-xs font-bold text-slate-500 uppercase text-center w-1/5">L4: Advanced</th></tr></thead><tbody id="hpc-tbody"></tbody></table></div>
+                        <div id="hpc-feedback-box" class="m-6 p-4 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-500 italic">Select ratings above to generate holistic remarks...</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Time Cost Section -->
         <section id="integration" class="py-24 bg-gradient-to-br from-indigo-900 to-slate-900 text-white relative overflow-hidden">
             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
             <div class="absolute top-0 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-[100px]"></div>
             <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/3 flex justify-center" data-aos="zoom-in">
-                    <div class="relative w-64 h-64">
-                        <div class="absolute inset-0 rounded-full border-8 border-slate-700"></div>
-                        <div class="absolute inset-0 rounded-full border-8 border-teal-400 border-t-transparent border-l-transparent border-r-transparent transform -rotate-45"></div>
-                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-                            <span class="text-6xl font-extrabold text-teal-400 drop-shadow-lg">&lt;3%</span>
-                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-2">Time Cost</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-2/3" data-aos="fade-left">
-                    <h2 class="text-4xl font-bold mb-4">Seamless Integration.<br>Maximum Impact.</h2>
-                    <p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl font-light">
-                        We understand the pressure on school timetables. Caremel is purposefully designed to require <span class="text-white font-bold border-b border-teal-400">less than 3%</span> of your total instructional time while delivering a measurable transformation in school culture.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/20">
-                            <i class="fas fa-check-circle text-teal-400"></i><span class="font-bold text-sm">Zero Academic Disruption</span>
-                        </div>
-                        <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/20">
-                            <i class="fas fa-puzzle-piece text-indigo-400"></i><span class="font-bold text-sm">Plug & Play Modules</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="w-full md:w-1/3 flex justify-center" data-aos="zoom-in"><div class="relative w-64 h-64"><div class="absolute inset-0 rounded-full border-8 border-slate-700"></div><div class="absolute inset-0 rounded-full border-8 border-teal-400 border-t-transparent border-l-transparent border-r-transparent transform -rotate-45"></div><div class="absolute inset-0 flex flex-col items-center justify-center text-center"><span class="text-6xl font-extrabold text-teal-400 drop-shadow-lg">&lt;3%</span><span class="text-xs font-bold uppercase tracking-widest text-slate-400 mt-2">Time Cost</span></div></div></div>
+                <div class="w-full md:w-2/3" data-aos="fade-left"><h2 class="text-4xl font-bold mb-4">Seamless Integration.<br>Maximum Impact.</h2><p class="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl font-light">We understand the pressure on school timetables. Caremel is purposefully designed to require <span class="text-white font-bold border-b border-teal-400">less than 3%</span> of your total instructional time while delivering a measurable transformation in school culture.</p><div class="flex flex-wrap gap-4"><div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/20"><i class="fas fa-check-circle text-teal-400"></i><span class="font-bold text-sm">Zero Academic Disruption</span></div><div class="flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/20"><i class="fas fa-puzzle-piece text-indigo-400"></i><span class="font-bold text-sm">Plug & Play Modules</span></div></div></div>
             </div>
         </section>
     </main>
 
     <!-- ============================================== -->
-    <!-- VIEW: CURRICULUM (Detailed Syllabus) -->
+    <!-- VIEW: CURRICULUM -->
     <!-- ============================================== -->
     <main id="view-curriculum" class="view-section">
         <header class="bg-gradient-to-r from-slate-900 to-indigo-900 pt-32 pb-20 shadow-lg relative overflow-hidden">
@@ -433,208 +253,151 @@
              <div class="max-w-6xl mx-auto px-6 relative z-10">
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div>
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4">
-                            <span class="text-xs font-bold text-teal-400 uppercase">8-Month Roadmap</span>
-                        </div>
-                        <h1 class="text-4xl font-bold text-white tracking-tight flex items-center gap-3">
-                            <i data-lucide="map" class="text-teal-400"></i> Learning Journey
-                        </h1>
-                        <p class="text-slate-400 font-medium mt-2 max-w-xl">
-                            A spiral curriculum designed to build complexity from Grade 6 to 12.
-                        </p>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4"><span class="text-xs font-bold text-teal-400 uppercase">8-Month Roadmap</span></div>
+                        <h1 class="text-4xl font-bold text-white tracking-tight flex items-center gap-3"><i data-lucide="map" class="text-teal-400"></i> Learning Journey</h1>
+                        <p class="text-slate-400 font-medium mt-2 max-w-xl">A spiral curriculum designed to build complexity from Grade 6 to 12.</p>
                     </div>
                     <div class="mt-6 md:mt-0">
                          <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 flex items-center gap-4">
                             <div class="bg-teal-500/20 p-2 rounded-lg text-teal-400"><i data-lucide="check-circle"></i></div>
-                            <div>
-                                <div class="text-xs text-slate-400 uppercase font-bold">Status</div>
-                                <div class="text-sm font-bold text-white">Syllabus Verified</div>
-                            </div>
+                            <div><div class="text-xs text-slate-400 uppercase font-bold">Status</div><div class="text-sm font-bold text-white">Syllabus Verified</div></div>
                          </div>
                     </div>
                 </div>
             </div>
         </header>
-
         <div class="max-w-6xl mx-auto px-6 py-12">
-            <!-- Grade Selector -->
-            <div class="mb-10">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Select Grade Level</label>
-                <div class="flex flex-wrap gap-2" id="grade-selector-container"></div>
-            </div>
-
-            <!-- Grade Header -->
+            <div class="mb-10"><label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Select Grade Level</label><div class="flex flex-wrap gap-2" id="grade-selector-container"></div></div>
             <div id="grade-header" class="mb-8 p-8 bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row items-start justify-between gap-4"></div>
-
-            <!-- Roadmap Grid -->
             <div id="roadmap-grid" class="relative border-l-2 border-slate-200 ml-4 md:ml-8 space-y-12 pb-12"></div>
         </div>
     </main>
 
     <!-- ============================================== -->
-    <!-- VIEW: RESOURCES (Worksheets) -->
+    <!-- VIEW: RESOURCES -->
     <!-- ============================================== -->
     <main id="view-resources" class="view-section">
         <header class="bg-slate-900 pt-32 pb-16 text-center">
             <h1 class="text-3xl font-bold text-white">Student Worksheets</h1>
             <p class="text-slate-400 mt-2">Printable resources for classroom activities.</p>
-            <button onclick="window.print()" class="mt-6 bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full text-sm font-bold transition flex items-center gap-2 mx-auto no-print">
-                <i data-lucide="printer" class="w-4 h-4"></i> Print All Resources
-            </button>
+            <button onclick="window.print()" class="mt-6 bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full text-sm font-bold transition flex items-center gap-2 mx-auto no-print"><i data-lucide="printer" class="w-4 h-4"></i> Print All Resources</button>
         </header>
 
         <div class="py-12 bg-slate-100 min-h-screen">
             
-            <!-- Worksheet 1: Empathy Map (Grade 7) -->
+            <!-- GRADE 6: MOOD METER -->
             <div class="a4-page">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-teal-50 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
-                
                 <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
-                    <div>
-                        <div class="text-amber-600 font-bold flex items-center gap-2 mb-1 text-sm">
-                            <span class="font-serif italic">C</span> Caremel.in
-                        </div>
-                        <h1 class="text-3xl font-serif font-bold text-slate-900">The Empathy Map</h1>
-                        <p class="text-slate-500 text-xs mt-1">Unit 1: The Architecture of Empathy | Session 1.3</p>
-                    </div>
-                    <div class="text-right">
-                        <div class="inline-block bg-teal-50 px-3 py-1 rounded text-[10px] font-bold text-teal-700 uppercase">Grade 7</div>
-                        <div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div>
-                        <div class="w-48 h-6 border-b border-slate-300"></div>
-                    </div>
+                    <div><div class="text-amber-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Mood Meter</h1><p class="text-slate-500 text-xs mt-1">Unit 1: Mindfulness | Session 1.1</p></div>
+                    <div class="text-right"><div class="inline-block bg-teal-50 px-3 py-1 rounded text-[10px] font-bold text-teal-700 uppercase">Grade 6</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
                 </header>
-                <div class="bg-amber-50 rounded-lg p-5 mb-8 border border-amber-100 relative z-10">
-                    <h3 class="text-amber-800 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="target" class="w-3 h-3"></i> The Objective</h3>
-                    <p class="text-slate-700 text-xs leading-relaxed">True empathy requires stepping out of your own "autobiographical frame." Use this map to separate what you <strong>see</strong> (data) from what you <strong>interpret</strong> (feelings).</p>
+                <div class="bg-amber-50 rounded-lg p-5 mb-8 border border-amber-100"><h3 class="text-amber-800 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="activity" class="w-3 h-3"></i> The Objective</h3><p class="text-slate-700 text-xs leading-relaxed">Emotions have two dimensions: <strong>Energy</strong> (High/Low) and <strong>Pleasantness</strong> (High/Low). Use this grid to plot where you are right now, and define the word that best describes it.</p></div>
+                <div class="grid grid-cols-2 gap-2 h-[500px]">
+                    <div class="bg-red-100 border-2 border-red-200 rounded-tl-2xl p-4 flex flex-col justify-between"><h4 class="font-bold text-red-700 text-sm">RED: High Energy / Unpleasant</h4><p class="text-[10px] text-red-600">Angry, Scared, Anxious</p><div class="w-full h-20 border-2 border-dashed border-red-300 rounded bg-white/50"></div></div>
+                    <div class="bg-yellow-100 border-2 border-yellow-200 rounded-tr-2xl p-4 flex flex-col justify-between"><h4 class="font-bold text-yellow-700 text-sm">YELLOW: High Energy / Pleasant</h4><p class="text-[10px] text-yellow-600">Happy, Excited, Curious</p><div class="w-full h-20 border-2 border-dashed border-yellow-300 rounded bg-white/50"></div></div>
+                    <div class="bg-blue-100 border-2 border-blue-200 rounded-bl-2xl p-4 flex flex-col justify-between"><h4 class="font-bold text-blue-700 text-sm">BLUE: Low Energy / Unpleasant</h4><p class="text-[10px] text-blue-600">Sad, Lonely, Tired</p><div class="w-full h-20 border-2 border-dashed border-blue-300 rounded bg-white/50"></div></div>
+                    <div class="bg-green-100 border-2 border-green-200 rounded-br-2xl p-4 flex flex-col justify-between"><h4 class="font-bold text-green-700 text-sm">GREEN: Low Energy / Pleasant</h4><p class="text-[10px] text-green-600">Calm, Content, Safe</p><div class="w-full h-20 border-2 border-dashed border-green-300 rounded bg-white/50"></div></div>
                 </div>
-                <div class="mb-8 relative z-10">
-                    <label class="block text-slate-900 font-bold mb-2 text-xs">The Subject / Scenario</label>
-                    <div class="w-full h-10 border-2 border-slate-100 rounded-lg bg-white p-2 text-xs text-slate-500 italic">Who are you empathizing with?</div>
-                </div>
+                <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Emotional Literacy • Grade 6 Curriculum</p></div>
+            </div>
+
+            <!-- GRADE 7: EMPATHY MAP -->
+            <div class="a4-page">
+                <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
+                    <div><div class="text-amber-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Empathy Map</h1><p class="text-slate-500 text-xs mt-1">Unit 1: The Architecture of Empathy | Session 1.3</p></div>
+                    <div class="text-right"><div class="inline-block bg-teal-50 px-3 py-1 rounded text-[10px] font-bold text-teal-700 uppercase">Grade 7</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
+                </header>
+                <div class="bg-amber-50 rounded-lg p-5 mb-8 border border-amber-100"><h3 class="text-amber-800 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="target" class="w-3 h-3"></i> The Objective</h3><p class="text-slate-700 text-xs leading-relaxed">True empathy requires stepping out of your own "autobiographical frame." Use this map to separate what you <strong>see</strong> (data) from what you <strong>interpret</strong> (feelings).</p></div>
+                <div class="mb-8 relative z-10"><label class="block text-slate-900 font-bold mb-2 text-xs">The Subject / Scenario</label><div class="w-full h-10 border-2 border-slate-100 rounded-lg bg-white p-2 text-xs text-slate-500 italic">Who are you empathizing with?</div></div>
                 <div class="grid grid-cols-2 gap-6 h-[500px] relative z-10">
-                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-teal-200 transition">
-                        <div class="absolute top-4 right-4 text-teal-100 group-hover:text-teal-50"><i data-lucide="eye" class="w-8 h-8"></i></div>
-                        <h4 class="text-teal-700 font-bold mb-1 text-sm">SEE & HEAR</h4>
-                         <p class="text-[10px] text-slate-400 mb-4">What is happening in their environment?</p>
-                        <div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div>
-                    </div>
-                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-blue-200 transition">
-                         <div class="absolute top-4 right-4 text-blue-100 group-hover:text-blue-50"><i data-lucide="mic" class="w-8 h-8"></i></div>
-                        <h4 class="text-blue-700 font-bold mb-1 text-sm">DO & SAY</h4>
-                        <p class="text-[10px] text-slate-400 mb-4">What are their observable behaviors?</p>
-                        <div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div>
-                    </div>
-                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-purple-200 transition">
-                         <div class="absolute top-4 right-4 text-purple-100 group-hover:text-purple-50"><i data-lucide="brain-circuit" class="w-8 h-8"></i></div>
-                        <h4 class="text-purple-700 font-bold mb-1 text-sm">THINK & FEEL</h4>
-                        <p class="text-[10px] text-slate-400 mb-4">What is their internal monologue?</p>
-                        <div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div>
-                    </div>
-                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-rose-200 transition">
-                         <div class="absolute top-4 right-4 text-rose-100 group-hover:text-rose-50"><i data-lucide="heart" class="w-8 h-8"></i></div>
-                        <h4 class="text-rose-700 font-bold mb-1 text-sm">PAINS & GAINS</h4>
-                        <p class="text-[10px] text-slate-400 mb-4">What do they hope to achieve?</p>
-                        <div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div>
-                    </div>
+                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-teal-200 transition"><div class="absolute top-4 right-4 text-teal-100 group-hover:text-teal-50"><i data-lucide="eye" class="w-8 h-8"></i></div><h4 class="text-teal-700 font-bold mb-1 text-sm">SEE & HEAR</h4><p class="text-[10px] text-slate-400 mb-4">What is happening in their environment?</p><div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div></div>
+                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-blue-200 transition"><div class="absolute top-4 right-4 text-blue-100 group-hover:text-blue-50"><i data-lucide="mic" class="w-8 h-8"></i></div><h4 class="text-blue-700 font-bold mb-1 text-sm">DO & SAY</h4><p class="text-[10px] text-slate-400 mb-4">What are their observable behaviors?</p><div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div></div>
+                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-purple-200 transition"><div class="absolute top-4 right-4 text-purple-100 group-hover:text-purple-50"><i data-lucide="brain-circuit" class="w-8 h-8"></i></div><h4 class="text-purple-700 font-bold mb-1 text-sm">THINK & FEEL</h4><p class="text-[10px] text-slate-400 mb-4">What is their internal monologue?</p><div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div></div>
+                    <div class="border-2 border-slate-100 rounded-2xl p-5 relative bg-white group hover:border-rose-200 transition"><div class="absolute top-4 right-4 text-rose-100 group-hover:text-rose-50"><i data-lucide="heart" class="w-8 h-8"></i></div><h4 class="text-rose-700 font-bold mb-1 text-sm">PAINS & GAINS</h4><p class="text-[10px] text-slate-400 mb-4">What do they hope to achieve?</p><div class="space-y-4 mt-4"><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div><div class="border-b border-slate-100 h-8"></div></div></div>
                 </div>
-                 <div class="absolute bottom-10 left-0 w-full text-center">
-                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Engineering Futures • Grade 7 Curriculum</p>
-                </div>
+                <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Engineering Futures • Grade 7 Curriculum</p></div>
             </div>
 
-            <!-- Worksheet 2: Competency Audit (Grade 10) -->
+            <!-- GRADE 8: WOOP GOAL SETTING -->
             <div class="a4-page">
                 <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
-                    <div>
-                        <div class="text-indigo-600 font-bold flex items-center gap-2 mb-1 text-sm">
-                            <span class="font-serif italic">C</span> Caremel.in
-                        </div>
-                        <h1 class="text-3xl font-serif font-bold text-slate-900">The Competency Audit</h1>
-                        <p class="text-slate-500 text-xs mt-1">Unit 2: The Competency Lab | Session 2.1</p>
-                    </div>
-                    <div class="text-right">
-                        <div class="inline-block bg-indigo-50 px-3 py-1 rounded text-[10px] font-bold text-indigo-700 uppercase">Grade 10</div>
-                        <div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div>
-                        <div class="w-48 h-6 border-b border-slate-300"></div>
-                    </div>
+                    <div><div class="text-indigo-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">WOOP Strategy</h1><p class="text-slate-500 text-xs mt-1">Unit 1: Advanced Decisions | Session 1.2</p></div>
+                    <div class="text-right"><div class="inline-block bg-indigo-50 px-3 py-1 rounded text-[10px] font-bold text-indigo-700 uppercase">Grade 8</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
                 </header>
-                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-8">
-                    <h3 class="text-indigo-900 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3"></i> The Mission</h3>
-                    <p class="text-slate-700 text-xs leading-relaxed">Colleges and employers look for evidence of skills. Translate your activities into <strong>NACE Competency Language</strong>.</p>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-8"><h3 class="text-indigo-900 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="target" class="w-3 h-3"></i> The Science of Wishing</h3><p class="text-slate-700 text-xs leading-relaxed">Positive thinking isn't enough. You need to prepare for obstacles. Use Gabriele Oettingen's WOOP method to turn a wish into a plan.</p></div>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-indigo-500 pl-4 py-2"><h4 class="font-bold text-indigo-700">WISH</h4><p class="text-xs text-slate-500 mb-2">What is one meaningful, challenging, but feasible wish?</p><div class="h-12 bg-slate-50 border-b border-slate-200"></div></div>
+                    <div class="border-l-4 border-teal-500 pl-4 py-2"><h4 class="font-bold text-teal-700">OUTCOME</h4><p class="text-xs text-slate-500 mb-2">What is the best result of fulfilling this wish?</p><div class="h-12 bg-slate-50 border-b border-slate-200"></div></div>
+                    <div class="border-l-4 border-orange-500 pl-4 py-2"><h4 class="font-bold text-orange-700">OBSTACLE</h4><p class="text-xs text-slate-500 mb-2">What is the internal obstacle (inside you) that holds you back?</p><div class="h-12 bg-slate-50 border-b border-slate-200"></div></div>
+                    <div class="border-l-4 border-green-500 pl-4 py-2"><h4 class="font-bold text-green-700">PLAN</h4><p class="text-xs text-slate-500 mb-2">If [obstacle] happens, then I will [action].</p><div class="h-12 bg-slate-50 border-b border-slate-200"></div></div>
                 </div>
-                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm mb-8">
-                    <div class="bg-slate-50 border-b border-slate-200 p-4 grid grid-cols-12 gap-4 text-[10px] font-bold text-slate-500 uppercase">
-                        <div class="col-span-4">Activity</div><div class="col-span-3">Competency</div><div class="col-span-5">Evidence</div>
-                    </div>
-                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 bg-slate-50/50">
-                        <div class="col-span-4 text-xs text-slate-400 italic">e.g., Diwali Fete</div>
-                        <div class="col-span-3"><span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-1 rounded-full font-bold">LEADERSHIP</span></div>
-                        <div class="col-span-5 text-xs text-slate-400 italic">Managed team of 5.</div>
-                    </div>
-                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 h-24"><div class="col-span-4 border-r border-slate-100"></div><div class="col-span-3 border-r border-slate-100"></div><div class="col-span-5"></div></div>
-                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 h-24"><div class="col-span-4 border-r border-slate-100"></div><div class="col-span-3 border-r border-slate-100"></div><div class="col-span-5"></div></div>
-                </div>
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-5">
-                        <h4 class="text-slate-900 font-bold text-sm mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-amber-500"></i> My Strongest Asset</h4>
-                        <div class="border-b border-slate-200 h-8 mt-4"></div>
-                    </div>
-                    <div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-5">
-                        <h4 class="text-slate-900 font-bold text-sm mb-2 flex items-center gap-2"><i data-lucide="trending-up" class="w-4 h-4 text-red-500"></i> My Growth Area</h4>
-                        <div class="border-b border-slate-200 h-8 mt-4"></div>
-                    </div>
-                </div>
-                 <div class="absolute bottom-10 left-0 w-full text-center">
-                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • NACE Career Readiness • Grade 10 Curriculum</p>
-                </div>
+                <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Agency & Ethics • Grade 8 Curriculum</p></div>
             </div>
 
-            <!-- Worksheet 3: Odyssey Plan (Grade 12) -->
+            <!-- GRADE 9: THE FAILURE RESUME -->
+            <div class="a4-page">
+                <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
+                    <div><div class="text-red-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Failure Resume</h1><p class="text-slate-500 text-xs mt-1">Unit 2: Entrepreneurship | Session 2.1</p></div>
+                    <div class="text-right"><div class="inline-block bg-red-50 px-3 py-1 rounded text-[10px] font-bold text-red-700 uppercase">Grade 9</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
+                </header>
+                <div class="bg-red-50 border border-red-100 rounded-xl p-5 mb-8"><h3 class="text-red-900 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="refresh-ccw" class="w-3 h-3"></i> Reframing</h3><p class="text-slate-700 text-xs leading-relaxed">Success is built on a mountain of failures. Stanford Professor Tina Seelig suggests keeping a "failure resume" to track what you learned from setbacks.</p></div>
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <div class="grid grid-cols-3 bg-slate-50 p-3 font-bold text-xs text-slate-600 border-b border-slate-200"><div>The Failure</div><div>What I Learned</div><div>How I Grew</div></div>
+                    <div class="grid grid-cols-3 h-24 border-b border-slate-100"><div class="border-r p-2"></div><div class="border-r p-2"></div><div class="p-2"></div></div>
+                    <div class="grid grid-cols-3 h-24 border-b border-slate-100"><div class="border-r p-2"></div><div class="border-r p-2"></div><div class="p-2"></div></div>
+                    <div class="grid grid-cols-3 h-24"><div class="border-r p-2"></div><div class="border-r p-2"></div><div class="p-2"></div></div>
+                </div>
+                <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Resilience • Grade 9 Curriculum</p></div>
+            </div>
+
+            <!-- GRADE 10: COMPETENCY AUDIT -->
+            <div class="a4-page">
+                <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
+                    <div><div class="text-indigo-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Competency Audit</h1><p class="text-slate-500 text-xs mt-1">Unit 2: The Competency Lab | Session 2.1</p></div>
+                    <div class="text-right"><div class="inline-block bg-indigo-50 px-3 py-1 rounded text-[10px] font-bold text-indigo-700 uppercase">Grade 10</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
+                </header>
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-8"><h3 class="text-indigo-900 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="briefcase" class="w-3 h-3"></i> The Mission</h3><p class="text-slate-700 text-xs leading-relaxed">Colleges and employers look for evidence of skills. Translate your activities into <strong>NACE Competency Language</strong>.</p></div>
+                <div class="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm mb-8">
+                    <div class="bg-slate-50 border-b border-slate-200 p-4 grid grid-cols-12 gap-4 text-[10px] font-bold text-slate-500 uppercase"><div class="col-span-4">Activity</div><div class="col-span-3">Competency</div><div class="col-span-5">Evidence</div></div>
+                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 bg-slate-50/50"><div class="col-span-4 text-xs text-slate-400 italic">e.g., Diwali Fete</div><div class="col-span-3"><span class="bg-amber-100 text-amber-800 text-[10px] px-2 py-1 rounded-full font-bold">LEADERSHIP</span></div><div class="col-span-5 text-xs text-slate-400 italic">Managed team of 5.</div></div>
+                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 h-24"><div class="col-span-4 border-r border-slate-100"></div><div class="col-span-3 border-r border-slate-100"></div><div class="col-span-5"></div></div>
+                    <div class="p-4 grid grid-cols-12 gap-4 border-b border-slate-100 h-24"><div class="col-span-4 border-r border-slate-100"></div><div class="col-span-3 border-r border-slate-100"></div><div class="col-span-5"></div></div>
+                </div>
+                <div class="grid grid-cols-2 gap-6"><div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-5"><h4 class="text-slate-900 font-bold text-sm mb-2 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-amber-500"></i> My Strongest Asset</h4><div class="border-b border-slate-200 h-8 mt-4"></div></div><div class="bg-white border-2 border-dashed border-slate-300 rounded-xl p-5"><h4 class="text-slate-900 font-bold text-sm mb-2 flex items-center gap-2"><i data-lucide="trending-up" class="w-4 h-4 text-red-500"></i> My Growth Area</h4><div class="border-b border-slate-200 h-8 mt-4"></div></div></div>
+                 <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • NACE Career Readiness • Grade 10 Curriculum</p></div>
+            </div>
+
+            <!-- GRADE 11: LEAN CANVAS -->
+            <div class="a4-page">
+                <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
+                    <div><div class="text-blue-600 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Lean Canvas</h1><p class="text-slate-500 text-xs mt-1">Unit 1: Entrepreneurship | Session 1.2</p></div>
+                    <div class="text-right"><div class="inline-block bg-blue-50 px-3 py-1 rounded text-[10px] font-bold text-blue-700 uppercase">Grade 11</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
+                </header>
+                <div class="bg-blue-50 border border-blue-100 rounded-xl p-5 mb-8"><h3 class="text-blue-900 font-bold text-xs uppercase tracking-wide mb-2 flex items-center gap-2"><i data-lucide="rocket" class="w-3 h-3"></i> 1-Page Business Plan</h3><p class="text-slate-700 text-xs leading-relaxed">Map out your business idea on a single page to test viability quickly.</p></div>
+                <div class="grid grid-cols-5 h-[500px] border-2 border-slate-800">
+                    <div class="border-r-2 border-slate-800 p-2 col-span-1"><h4 class="font-bold text-[10px]">PROBLEM</h4></div>
+                    <div class="border-r-2 border-slate-800 col-span-1 flex flex-col"><div class="h-1/2 border-b-2 border-slate-800 p-2"><h4 class="font-bold text-[10px]">SOLUTION</h4></div><div class="h-1/2 p-2"><h4 class="font-bold text-[10px]">METRICS</h4></div></div>
+                    <div class="border-r-2 border-slate-800 p-2 col-span-1"><h4 class="font-bold text-[10px]">VALUE PROP</h4></div>
+                    <div class="border-r-2 border-slate-800 col-span-1 flex flex-col"><div class="h-1/2 border-b-2 border-slate-800 p-2"><h4 class="font-bold text-[10px]">UNFAIR ADVANTAGE</h4></div><div class="h-1/2 p-2"><h4 class="font-bold text-[10px]">CHANNELS</h4></div></div>
+                    <div class="p-2 col-span-1"><h4 class="font-bold text-[10px]">CUSTOMER</h4></div>
+                </div>
+                <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Innovation • Grade 11 Curriculum</p></div>
+            </div>
+
+            <!-- GRADE 12: ODYSSEY PLAN -->
             <div class="a4-page">
                 <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-600 to-pink-600"></div>
                 <header class="flex justify-between items-end border-b-2 border-slate-100 pb-6 mb-8 relative z-10">
-                    <div>
-                        <div class="text-purple-700 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div>
-                        <h1 class="text-3xl font-serif font-bold text-slate-900">The Odyssey Plan</h1>
-                        <p class="text-slate-500 text-xs mt-1">Unit 4: Life Design Capstone | Session 4.2</p>
-                    </div>
-                    <div class="text-right">
-                        <div class="inline-block bg-purple-100 px-3 py-1 rounded text-[10px] font-bold text-purple-700 uppercase">Grade 12</div>
-                        <div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div>
-                        <div class="w-48 h-6 border-b border-slate-300"></div>
-                    </div>
+                    <div><div class="text-purple-700 font-bold flex items-center gap-2 mb-1 text-sm"><span class="font-serif italic">C</span> Caremel.in</div><h1 class="text-3xl font-serif font-bold text-slate-900">The Odyssey Plan</h1><p class="text-slate-500 text-xs mt-1">Unit 4: Life Design Capstone | Session 4.2</p></div>
+                    <div class="text-right"><div class="inline-block bg-purple-100 px-3 py-1 rounded text-[10px] font-bold text-purple-700 uppercase">Grade 12</div><div class="text-slate-400 text-[10px] uppercase tracking-widest mt-2">Student Name</div><div class="w-48 h-6 border-b border-slate-300"></div></div>
                 </header>
-                <div class="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-8 flex gap-4">
-                    <div class="shrink-0"><i data-lucide="compass" class="w-6 h-6 text-purple-500"></i></div>
-                    <div>
-                        <h3 class="text-purple-900 font-bold text-xs uppercase tracking-wide mb-1">Designing 3 Lives</h3>
-                        <p class="text-slate-700 text-xs leading-relaxed">Map out three distinct timelines for the next 5 years.</p>
-                    </div>
-                </div>
+                <div class="bg-purple-50 border border-purple-100 rounded-xl p-5 mb-8 flex gap-4"><div class="shrink-0"><i data-lucide="compass" class="w-6 h-6 text-purple-500"></i></div><div><h3 class="text-purple-900 font-bold text-xs uppercase tracking-wide mb-1">Designing 3 Lives</h3><p class="text-slate-700 text-xs leading-relaxed">Map out three distinct timelines for the next 5 years.</p></div></div>
                 <div class="space-y-6 mb-8">
-                    <!-- Path 1 -->
-                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div>
-                        <div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 1: The "Safe" Bet</h4></div>
-                        <div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div>
-                    </div>
-                    <!-- Path 2 -->
-                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
-                        <div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 2: The "Pivot"</h4></div>
-                        <div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div>
-                    </div>
-                    <!-- Path 3 -->
-                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-1 h-full bg-pink-500"></div>
-                        <div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 3: The "Uncensored"</h4></div>
-                        <div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div>
-                    </div>
+                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-green-500"></div><div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 1: The "Safe" Bet</h4></div><div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div></div>
+                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div><div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 2: The "Pivot"</h4></div><div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div></div>
+                    <div class="border border-slate-200 rounded-xl p-4 shadow-sm relative overflow-hidden"><div class="absolute top-0 left-0 w-1 h-full bg-pink-500"></div><div class="flex justify-between items-center mb-3"><h4 class="font-bold text-slate-800 text-sm">PATH 3: The "Uncensored"</h4></div><div class="flex gap-2"><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 1</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 2</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 3</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 4</div><div class="flex-1 h-12 bg-slate-50 border rounded p-1 text-[10px]">Year 5</div></div></div>
                 </div>
-                 <div class="absolute bottom-10 left-0 w-full text-center">
-                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Life Design Capstone • Grade 12 Curriculum</p>
-                </div>
+                 <div class="absolute bottom-10 left-0 w-full text-center"><p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Caremel.in • Life Design Capstone • Grade 12 Curriculum</p></div>
             </div>
         </div>
     </main>
@@ -686,12 +449,11 @@
                         <p id="modal-desc" class="text-slate-600 text-sm leading-relaxed"></p>
                     </div>
                 </div>
-                <!-- ADDED: Learning Outcome Overlay -->
                 <div class="flex items-start gap-4 mb-6">
                     <div class="bg-teal-50 p-3 rounded-lg text-teal-600"><i data-lucide="check-circle"></i></div>
                     <div>
                          <h4 class="font-bold text-slate-800 mb-1 text-sm uppercase">Outcome</h4>
-                         <p class="text-slate-600 text-sm leading-relaxed">Students will master this concept through interactive dialogic learning and experiential activities.</p>
+                         <p id="modal-outcome" class="text-slate-600 text-sm leading-relaxed"></p>
                     </div>
                 </div>
 
@@ -795,76 +557,75 @@
             }
         }
 
-        // --- 5. SYLLABUS DATA (COMPLETE) ---
+        // --- 5. SYLLABUS DATA (COMPLETE WITH SPECIFIC ACTIVITIES) ---
         const curriculumData = {
             6: {
                 title: "Self-Awareness & Regulation", subtitle: "Discovering the Self and Managing Transitions",
                 units: [
-                    { name: "Unit 1: Mindfulness", months: [{ title: "Month 1: The Internal Landscape", sessions: [{ title: "The Science of Emotions", desc: "Emotional Granularity & The Mood Meter." }, { title: "Neurobiology of Stress", desc: "Hand Model of the Brain: Amygdala vs. Cortex." }] }, { title: "Month 2: Social Connection", sessions: [{ title: "Empathy & Perspective", desc: "Walk in My Shoes: Cognitive Empathy." }, { title: "The Power of Gratitude", desc: "Counteracting Negativity Bias." }] }] },
-                    { name: "Unit 2: Transitional Resilience", months: [{ title: "Month 3: Building Bounce", sessions: [{ title: "Understanding Resilience", desc: "Reframing failure as data." }, { title: "Growth Mindset", desc: "The Power of 'Yet' vs Fixed Mindset." }] }, { title: "Month 4: Problem Solving", sessions: [{ title: "SODAS Framework", desc: "Situation, Options, Disadvantages, Advantages, Solution." }, { title: "Support Networks", desc: "Mapping your 'Safety Net'." }] }] },
-                    { name: "Unit 3: Health & Hygiene", months: [{ title: "Month 5: The Changing Self", sessions: [{ title: "Biology of Change", desc: "Normalizing puberty timelines." }, { title: "Hygiene Habits", desc: "Science of sweat & personal care." }] }, { title: "Month 6: Body & Boundaries", sessions: [{ title: "Body Image", desc: "Deconstructing 'perfect' images." }, { title: "Consent & FRIES", desc: "Freely given, Reversible, Informed, Enthusiastic, Specific." }] }] },
-                    { name: "Unit 4: Digital Citizenship", months: [{ title: "Month 7: Digital Footprint", sessions: [{ title: "Digital Trails", desc: "Reputation management online." }, { title: "Media Balance", desc: "Red Flag Feelings & Screen Time." }] }, { title: "Month 8: Cyber Safety", sessions: [{ title: "News Literacy", desc: "Fact vs. Fiction." }, { title: "Digital Passport", desc: "Final Digital Ethics Pledge." }] }] }
+                    { name: "Unit 1: Mindfulness", months: [{ title: "Month 1: The Internal Landscape", sessions: [{ title: "The Science of Emotions", desc: "Emotional Granularity & The Mood Meter.", activity: "Activity: Students create a personal 'Mood Meter' map to identify their current emotional state." }, { title: "Neurobiology of Stress", desc: "Hand Model of the Brain: Amygdala vs. Cortex.", activity: "Activity: Modeling the 'Hand Brain' to explain the fight-or-flight response." }] }, { title: "Month 2: Social Connection", sessions: [{ title: "Empathy & Perspective", desc: "Walk in My Shoes: Cognitive Empathy.", activity: "Activity: 'Shoe Swap' role-play to practice seeing from another's perspective." }, { title: "The Power of Gratitude", desc: "Counteracting Negativity Bias.", activity: "Activity: Writing 'Gratitude Letters' to unacknowledged helpers in school." }] }] },
+                    { name: "Unit 2: Transitional Resilience", months: [{ title: "Month 3: Building Bounce", sessions: [{ title: "Understanding Resilience", desc: "Reframing failure as data.", activity: "Activity: The 'Rubber Band' analogy demonstration." }, { title: "Growth Mindset", desc: "The Power of 'Yet' vs Fixed Mindset.", activity: "Activity: Re-writing 'I can't' statements into 'I can't yet' goals." }] }, { title: "Month 4: Problem Solving", sessions: [{ title: "SODAS Framework", desc: "Situation, Options, Disadvantages, Advantages, Solution.", activity: "Activity: Solving a fictional cafeteria conflict using the SODAS worksheet." }, { title: "Support Networks", desc: "Mapping your 'Safety Net'.", activity: "Activity: Drawing a 'Web of Support' identifying trusted adults." }] }] },
+                    { name: "Unit 3: Health & Hygiene", months: [{ title: "Month 5: The Changing Self", sessions: [{ title: "Biology of Change", desc: "Normalizing puberty timelines.", activity: "Activity: Timeline creation of human growth stages." }, { title: "Hygiene Habits", desc: "Science of sweat & personal care.", activity: "Activity: Creating a personal 'Hygiene Kit' checklist." }] }, { title: "Month 6: Body & Boundaries", sessions: [{ title: "Body Image", desc: "Deconstructing 'perfect' images.", activity: "Activity: 'Photoshop Detective' - finding edited elements in ads." }, { title: "Consent & FRIES", desc: "Freely given, Reversible, Informed, Enthusiastic, Specific.", activity: "Activity: Role-playing boundary setting scenarios." }] }] },
+                    { name: "Unit 4: Digital Citizenship", months: [{ title: "Month 7: Digital Footprint", sessions: [{ title: "Digital Trails", desc: "Reputation management online.", activity: "Activity: Auditing a fictional social media profile." }, { title: "Media Balance", desc: "Red Flag Feelings & Screen Time.", activity: "Activity: Designing a 'Tech-Free Zone' sign for home." }] }, { title: "Month 8: Cyber Safety", sessions: [{ title: "News Literacy", desc: "Fact vs. Fiction.", activity: "Activity: 'Spot the Fake' news headline game." }, { title: "Digital Passport", desc: "Final Digital Ethics Pledge.", activity: "Activity: Signing the class Digital Constitution." }] }] }
                 ]
             },
             7: {
                 title: "Empathy & Global Citizenship", subtitle: "Navigating the Social World",
                 units: [
-                    { name: "Unit 1: The Architecture of Empathy", months: [{ title: "Month 1: Biological Connection", sessions: [{title: "The Brain's Social WiFi", desc: "Mirror Neurons & Emotional Contagion."}, {title: "Perspective Taking", desc: "Empathy Maps: See, Hear, Think, Feel."}] }, { title: "Month 2: Compassion in Action", sessions: [{title: "Empathy vs. Compassion", desc: "Moving from feeling to doing."}, {title: "The Circle of Care", desc: "Building inclusive communities."}] }] },
-                    { name: "Unit 2: Communication & Conflict", months: [{ title: "Month 3: Listening Skills", sessions: [{title: "Decoding Silence", desc: "Active Listening & Looping."}, {title: "Nonviolent Communication", desc: "Jackal vs. Giraffe Language."}] }, { title: "Month 4: Resolution Tools", sessions: [{title: "The Orange Negotiation", desc: "Positions vs. Interests."}, {title: "Restorative Circles", desc: "Repairing harm vs. punishment."}] }] },
-                    { name: "Unit 3: Critical Thinking", months: [{ title: "Month 5: Algorithmic Literacy", sessions: [{title: "The Algorithmic You", desc: "Bias in the Black Box."}, {title: "Filter Bubbles", desc: "Escaping the echo chamber."}] }, { title: "Month 6: Digital Ethics", sessions: [{title: "The Attention Economy", desc: "Persuasive design & addiction."}, {title: "Humane Design Sprint", desc: "Re-designing apps for well-being."}] }] },
-                    { name: "Unit 4: Environmental Values", months: [{ title: "Month 7: Systems Thinking", sessions: [{title: "The Iceberg Model", desc: "Root cause analysis of issues."}, {title: "Tragedy of the Commons", desc: "Game Theory & Resource Management."}] }, { title: "Month 8: Sustainable Future", sessions: [{title: "Carbon Shopping Cart", desc: "Hidden costs of consumption."}, {title: "Circular Economy", desc: "Closing the loop on waste."}] }] }
+                    { name: "Unit 1: The Architecture of Empathy", months: [{ title: "Month 1: Biological Connection", sessions: [{title: "The Brain's Social WiFi", desc: "Mirror Neurons & Emotional Contagion.", activity: "Activity: Mirroring exercises to feel connected movement."}, {title: "Perspective Taking", desc: "Empathy Maps: See, Hear, Think, Feel.", activity: "Activity: Completing an Empathy Map for a misunderstood character."}] }, { title: "Month 2: Compassion in Action", sessions: [{title: "Empathy vs. Compassion", desc: "Moving from feeling to doing.", activity: "Activity: Brainstorming actionable kindness acts." }, {title: "The Circle of Care", desc: "Building inclusive communities.", activity: "Activity: Expanding the 'Circle of Concern' diagram."}] }] },
+                    { name: "Unit 2: Communication & Conflict", months: [{ title: "Month 3: Listening Skills", sessions: [{title: "Decoding Silence", desc: "Active Listening & Looping.", activity: "Activity: 'Back-to-Back' drawing challenge to test listening."}, {title: "Nonviolent Communication", desc: "Jackal vs. Giraffe Language.", activity: "Activity: Translating aggressive statements into 'I' messages."}] }, { title: "Month 4: Resolution Tools", sessions: [{title: "The Orange Negotiation", desc: "Positions vs. Interests.", activity: "Activity: The 'Ugli Orange' negotiation simulation."}, {title: "Restorative Circles", desc: "Repairing harm vs. punishment.", activity: "Activity: Holding a mock restorative circle for a broken item."}] }] },
+                    { name: "Unit 3: Critical Thinking", months: [{ title: "Month 5: Algorithmic Literacy", sessions: [{title: "The Algorithmic You", desc: "Bias in the Black Box.", activity: "Activity: Analyzing YouTube recommendations." }, {title: "Filter Bubbles", desc: "Escaping the echo chamber.", activity: "Activity: Comparing search results for the same topic."}] }, { title: "Month 6: Digital Ethics", sessions: [{title: "The Attention Economy", desc: "Persuasive design & addiction.", activity: "Activity: Redesigning an app to be less addictive."}, {title: "Humane Design Sprint", desc: "Re-designing apps for well-being.", activity: "Activity: Prototyping a 'Well-being First' app."}] }] },
+                    { name: "Unit 4: Environmental Values", months: [{ title: "Month 7: Systems Thinking", sessions: [{title: "The Iceberg Model", desc: "Root cause analysis of issues.", activity: "Activity: Applying the Iceberg Model to a local problem."}, {title: "Tragedy of the Commons", desc: "Game Theory & Resource Management.", activity: "Activity: The 'Goldfish' resource depletion game."}] }, { title: "Month 8: Sustainable Future", sessions: [{title: "Carbon Shopping Cart", desc: "Hidden costs of consumption.", activity: "Activity: Calculating the 'food miles' of a lunchbox."}, {title: "Circular Economy", desc: "Closing the loop on waste.", activity: "Activity: Designing a product with zero waste."}] }] }
                 ]
             },
             8: {
                 title: "Agency, Ethics & Responsibility", subtitle: "From Impulse to Intent",
                 units: [
-                    { name: "Unit 1: Advanced Decisions", months: [{ title: "Month 1: Cognitive Control", sessions: [{title: "Neuroscience of the Pause", desc: "Neuroplasticity & Regulation."}, {title: "Six Thinking Hats", desc: "Escaping binary thinking."}] }, { title: "Month 2: Ethical Frameworks", sessions: [{title: "The Trolley Problem", desc: "Utilitarian vs. Deontological Ethics."}, {title: "WOOP Goal Setting", desc: "Wish, Outcome, Obstacle, Plan."}] }] },
-                    { name: "Unit 2: Gender Sensitivity", months: [{ title: "Month 3: Deconstructing Norms", sessions: [{title: "Breaking the Box", desc: "Man Box vs. Lady Like constraints."}, {title: "Media & Body Image", desc: "The Comparison Trap & Editing."}] }, { title: "Month 4: Active Allyship", sessions: [{title: "Bystander Intervention", desc: "The 5 Ds of disruption."}, {title: "Culture Audit", desc: "Assessing school gender norms."}] }] },
-                    { name: "Unit 3: Financial Literacy", months: [{ title: "Month 5: Psychology of Money", sessions: [{title: "Needs vs. Wants", desc: "The Diderot Effect."}, {title: "Opportunity Cost", desc: "The cost of saying 'Yes'."}] }, { title: "Month 6: Consumer Defense", sessions: [{title: "Marketing Tricks", desc: "Scarcity & Social Proof."}, {title: "Compound Interest", desc: "The Millionaire Penny."}] }] },
-                    { name: "Unit 4: Digital Citizenship II", months: [{ title: "Month 7: Data & Algorithms", sessions: [{title: "The Privacy Paradox", desc: "Big Data & Surveillance."}, {title: "Brand Management", desc: "Curating a professional footprint."}] }, { title: "Month 8: Truth & Activism", sessions: [{title: "Truth Decay", desc: "Deepfakes & Lateral Reading."}, {title: "Digital Activism", desc: "Slacktivism vs. Impact."}] }] }
+                    { name: "Unit 1: Advanced Decisions", months: [{ title: "Month 1: Cognitive Control", sessions: [{title: "Neuroscience of the Pause", desc: "Neuroplasticity & Regulation.", activity: "Activity: Practicing the 'STOP' mindfulness technique."}, {title: "Six Thinking Hats", desc: "Escaping binary thinking.", activity: "Activity: Analyzing a school issue using De Bono's Hats."}] }, { title: "Month 2: Ethical Frameworks", sessions: [{title: "The Trolley Problem", desc: "Utilitarian vs. Deontological Ethics.", activity: "Activity: Debating the Trolley Problem variants."}, {title: "WOOP Goal Setting", desc: "Wish, Outcome, Obstacle, Plan.", activity: "Activity: Creating a WOOP plan for a personal academic goal."}] }] },
+                    { name: "Unit 2: Gender Sensitivity", months: [{ title: "Month 3: Deconstructing Norms", sessions: [{title: "Breaking the Box", desc: "Man Box vs. Lady Like constraints.", activity: "Activity: 'Act Like a Man/Woman' box activity."}, {title: "Media & Body Image", desc: "The Comparison Trap & Editing.", activity: "Activity: Analyzing magazine covers for stereotypes."}] }, { title: "Month 4: Active Allyship", sessions: [{title: "Bystander Intervention", desc: "The 5 Ds of disruption.", activity: "Activity: Role-playing the 5 Ds in bullying scenarios."}, {title: "Culture Audit", desc: "Assessing school gender norms.", activity: "Activity: Conducting a 'Gender Walk' of the school."}] }] },
+                    { name: "Unit 3: Financial Literacy", months: [{ title: "Month 5: Psychology of Money", sessions: [{title: "Needs vs. Wants", desc: "The Diderot Effect.", activity: "Activity: Categorizing a shopping list into Needs vs. Wants."}, {title: "Opportunity Cost", desc: "The cost of saying 'Yes'.", activity: "Activity: Calculating the 'real cost' of items in hours worked."}] }, { title: "Month 6: Consumer Defense", sessions: [{title: "Marketing Tricks", desc: "Scarcity & Social Proof.", activity: "Activity: Identifying marketing tricks in commercials."}, {title: "Compound Interest", desc: "The Millionaire Penny.", activity: "Activity: The 'Doubling Penny' calculation challenge."}] }] },
+                    { name: "Unit 4: Digital Citizenship II", months: [{ title: "Month 7: Data & Algorithms", sessions: [{title: "The Privacy Paradox", desc: "Big Data & Surveillance.", activity: "Activity: Reading the Terms of Service of a popular app."}, {title: "Brand Management", desc: "Curating a professional footprint.", activity: "Activity: Creating a 'LinkedIn' profile for a historical figure."}] }, { title: "Month 8: Truth & Activism", sessions: [{title: "Truth Decay", desc: "Deepfakes & Lateral Reading.", activity: "Activity: Verifying a viral image using reverse search."}, {title: "Digital Activism", desc: "Slacktivism vs. Impact.", activity: "Activity: Planning a digital awareness campaign."}] }] }
                 ]
             },
             9: {
                 title: "The Awakened Citizen", subtitle: "Civic Agency & Entrepreneurial Spirit",
                 units: [
-                    { name: "Unit 1: SEWA & Community", months: [{ title: "Month 1: Design for Change", sessions: [{title: "The Sensory Walk", desc: "Feel: Observation vs. Insight."}, {title: "Radical Divergence", desc: "Imagine: The 'What If' Explosion."}] }, { title: "Month 2: Execution", sessions: [{title: "The Pilot Run", desc: "Do: MVP Execution."}, {title: "Narrative & Advocacy", desc: "Share: The 'I CAN' Pitch."}] }] },
-                    { name: "Unit 2: Entrepreneurship", months: [{ title: "Month 3: The Mindset", sessions: [{title: "Deconstructing Entrepreneurs", desc: "Myth-busting & Value Creation."}, {title: "Effectuation", desc: "The Paperclip Challenge."}] }, { title: "Month 4: Risk & Vision", sessions: [{title: "Risk Assessment", desc: "The Ring Toss Simulation."}, {title: "Venture Lab", desc: "Mini-venture planning."}] }] },
-                    { name: "Unit 3: Constitutional Values", months: [{ title: "Month 5: The Deshbhakt", sessions: [{title: "Defining Patriotism", desc: "Civic responsibility vs. rhetoric."}, {title: "Classroom Constitution", desc: "Drafting the Preamble."}] }, { title: "Month 6: Rights & Duties", sessions: [{title: "Rights vs. Duties", desc: "The Supreme Court Simulation."}, {title: "Vision 2047", desc: "Letter to the Future."}] }] },
-                    { name: "Unit 4: Advanced EQ", months: [{ title: "Month 7: Connection", sessions: [{title: "Empathy vs. Sympathy", desc: "Brene Brown's distinction."}, {title: "The Privilege Walk", desc: "Visualizing systemic advantage."}] }, { title: "Month 8: Systems & Self", sessions: [{title: "Digital Empathy", desc: "The Algorithm Game."}, {title: "Portfolio Review", desc: "Final synthesis."}] }] }
+                    { name: "Unit 1: SEWA & Community", months: [{ title: "Month 1: Design for Change", sessions: [{title: "The Sensory Walk", desc: "Feel: Observation vs. Insight.", activity: "Activity: Conducting a sensory walk of the school campus."}, {title: "Radical Divergence", desc: "Imagine: The 'What If' Explosion.", activity: "Activity: 'Crazy 8s' brainstorming for community solutions."}] }, { title: "Month 2: Execution", sessions: [{title: "The Pilot Run", desc: "Do: MVP Execution.", activity: "Activity: Running a small-scale test of a project idea."}, {title: "Narrative & Advocacy", desc: "Share: The 'I CAN' Pitch.", activity: "Activity: Drafting an 'Elevator Pitch' for the project."}] }] },
+                    { name: "Unit 2: Entrepreneurship", months: [{ title: "Month 3: The Mindset", sessions: [{title: "Deconstructing Entrepreneurs", desc: "Myth-busting & Value Creation.", activity: "Activity: Interviewing a local small business owner."}, {title: "Effectuation", desc: "The Paperclip Challenge.", activity: "Activity: The 'Paperclip Trade-Up' game."}] }, { title: "Month 4: Risk & Vision", sessions: [{title: "Risk Assessment", desc: "The Ring Toss Simulation.", activity: "Activity: The Ring Toss game to measure risk appetite."}, {title: "Venture Lab", desc: "Mini-venture planning.", activity: "Activity: Creating a 'Failure Resume'."}] }] },
+                    { name: "Unit 3: Constitutional Values", months: [{ title: "Month 5: The Deshbhakt", sessions: [{title: "Defining Patriotism", desc: "Civic responsibility vs. rhetoric.", activity: "Activity: Debating definitions of patriotism."}, {title: "Classroom Constitution", desc: "Drafting the Preamble.", activity: "Activity: Writing a Preamble for the classroom."}] }, { title: "Month 6: Rights & Duties", sessions: [{title: "Rights vs. Duties", desc: "The Supreme Court Simulation.", activity: "Activity: Mock Supreme Court case on student rights."}, {title: "Vision 2047", desc: "Letter to the Future.", activity: "Activity: Writing a letter to India in 2047."}] }] },
+                    { name: "Unit 4: Advanced EQ", months: [{ title: "Month 7: Connection", sessions: [{title: "Empathy vs. Sympathy", desc: "Brene Brown's distinction.", activity: "Activity: Analyzing video clips for empathy vs. sympathy."}, {title: "The Privilege Walk", desc: "Visualizing systemic advantage.", activity: "Activity: A modified 'Privilege Walk' activity."}] }, { title: "Month 8: Systems & Self", sessions: [{title: "Digital Empathy", desc: "The Algorithm Game.", activity: "Activity: Simulating algorithm bias."}, {title: "Portfolio Review", desc: "Final synthesis.", activity: "Activity: Presenting the 'Awakened Citizen' portfolio."}] }] }
                 ]
             },
             10: {
                 title: "Integration & Application", subtitle: "Design Thinking & Financial Prudence",
                 units: [
-                    { name: "Unit 1: Collaborative Problem Solving", months: [{ title: "Month 1: Agility", sessions: [{title: "Marshmallow Challenge", desc: "Prototyping & Assumptions."}, {title: "Solution Circles", desc: "Structured Ideation."}] }, { title: "Month 2: Scrum Methodology", sessions: [{title: "LEGO Scrum", desc: "Sprints, Backlogs, Velocity."}, {title: "Classroom Hackathon", desc: "60-second pitch sprint."}] }] },
-                    { name: "Unit 2: Financial Literacy II", months: [{ title: "Month 3: Behavioral Econ", sessions: [{title: "The Scarcity Mindset", desc: "The Bean Game Advanced."}, {title: "The Poverty Trap", desc: "SPENT Simulation."}] }, { title: "Month 4: Wealth Building", sessions: [{title: "College Debt Dilemma", desc: "PAYBACK Simulation."}, {title: "Financial Plan", desc: "Personal wealth roadmap."}] }] },
-                    { name: "Unit 3: Social Justice", months: [{ title: "Month 5: Identity", sessions: [{title: "Mapping the Self", desc: "Intersectionality Charts."}, {title: "Gender Literacy", desc: "The Genderbread Person."}] }, { title: "Month 6: Allyship", sessions: [{title: "Microaggressions", desc: "Calling In vs Calling Out."}, {title: "Justice Project", desc: "School equity audit."}] }] },
-                    { name: "Unit 4: Career Readiness", months: [{ title: "Month 7: Purpose", sessions: [{title: "Ikigai Workshop", desc: "Love, Good At, Paid, Needed."}, {title: "Future of Work", desc: "Inventing Jobs of 2035."}] }, { title: "Month 8: The Brand", sessions: [{title: "Elevator Pitch", desc: "Speed Networking."}, {title: "Mock Interviews", desc: "STAR Method Speed Dating."}] }] }
+                    { name: "Unit 1: Collaborative Problem Solving", months: [{ title: "Month 1: Agility", sessions: [{title: "Marshmallow Challenge", desc: "Prototyping & Assumptions.", activity: "Activity: The Spaghetti Tower Marshmallow Challenge."}, {title: "Solution Circles", desc: "Structured Ideation.", activity: "Activity: Rotating peer feedback circles."}] }, { title: "Month 2: Scrum Methodology", sessions: [{title: "LEGO Scrum", desc: "Sprints, Backlogs, Velocity.", activity: "Activity: Building a LEGO city using Scrum roles."}, {title: "Classroom Hackathon", desc: "60-second pitch sprint.", activity: "Activity: Rapid prototyping a solution to a school issue."}] }] },
+                    { name: "Unit 2: Financial Literacy II", months: [{ title: "Month 3: Behavioral Econ", sessions: [{title: "The Scarcity Mindset", desc: "The Bean Game Advanced.", activity: "Activity: The Advanced Bean Game with unexpected events."}, {title: "The Poverty Trap", desc: "SPENT Simulation.", activity: "Activity: Playing the 'SPENT' online simulation."}] }, { title: "Month 4: Wealth Building", sessions: [{title: "College Debt Dilemma", desc: "PAYBACK Simulation.", activity: "Activity: Playing the 'PAYBACK' college finance game."}, {title: "Financial Plan", desc: "Personal wealth roadmap.", activity: "Activity: Drafting a 5-year financial vision."}] }] },
+                    { name: "Unit 3: Social Justice", months: [{ title: "Month 5: Identity", sessions: [{title: "Mapping the Self", desc: "Intersectionality Charts.", activity: "Activity: Creating an 'Identity Star' map."}, {title: "Gender Literacy", desc: "The Genderbread Person.", activity: "Activity: Discussing the Genderbread Person model."}] }, { title: "Month 6: Allyship", sessions: [{title: "Microaggressions", desc: "Calling In vs Calling Out.", activity: "Activity: Scripting responses to microaggressions."}, {title: "Justice Project", desc: "School equity audit.", activity: "Activity: Conducting an accessibility audit of the school."}] }] },
+                    { name: "Unit 4: Career Readiness", months: [{ title: "Month 7: Purpose", sessions: [{title: "Ikigai Workshop", desc: "Love, Good At, Paid, Needed.", activity: "Activity: Completing the Ikigai diagram."}, {title: "Future of Work", desc: "Inventing Jobs of 2035.", activity: "Activity: Writing a job description for a future role."}] }, { title: "Month 8: The Brand", sessions: [{title: "Elevator Pitch", desc: "Speed Networking.", activity: "Activity: 30-second elevator pitch practice."}, {title: "Mock Interviews", desc: "STAR Method Speed Dating.", activity: "Activity: STAR method interview practice rounds."}] }] }
                 ]
             },
             11: {
                 title: "Leadership & Innovation", subtitle: "Business Blasters & Legal Literacy",
                 units: [
-                    { name: "Unit 1: Entrepreneurship", months: [{ title: "Month 1: Lean Startup", sessions: [{title: "The Problem Hunter", desc: "SCAMPER & Empathy Safari."}, {title: "The Lean Canvas", desc: "1-Page Business Model."}] }, { title: "Month 2: Pitching", sessions: [{title: "Build & Break", desc: "MVP Prototyping."}, {title: "Investor Day", desc: "Shark Tank simulation."}] }] },
-                    { name: "Unit 2: Pro Communication", months: [{ title: "Month 3: Digital Presence", sessions: [{title: "The Perfect Ask", desc: "Email Etiquette & BLUF."}, {title: "The Brand Called You", desc: "LinkedIn & Resumes."}] }, { title: "Month 4: Oratory", sessions: [{title: "The Interview", desc: "STAR Method mastery."}, {title: "Comm Showcase", desc: "Public speaking event."}] }] },
-                    { name: "Unit 3: Legal Literacy", months: [{ title: "Month 5: Rights", sessions: [{title: "The Rule Book", desc: "Constitutional Values Auction."}, {title: "RTI Act", desc: "Drafting an application."}] }, { title: "Month 6: Duties", sessions: [{title: "Consumer Rights", desc: "Mock Consumer Court."}, {title: "Civic Pledge", desc: "Community stewardship."}] }] },
-                    { name: "Unit 4: Leadership", months: [{ title: "Month 7: Team Dynamics", sessions: [{title: "Psychological Safety", desc: "Building trust in teams."}, {title: "Conflict Resolution", desc: "TKI Conflict Styles."}] }, { title: "Month 8: Governance", sessions: [{title: "Community Mapping", desc: "Assets and Leverage Points."}, {title: "Leadership Oath", desc: "Passing the torch."}] }] }
+                    { name: "Unit 1: Entrepreneurship", months: [{ title: "Month 1: Lean Startup", sessions: [{title: "The Problem Hunter", desc: "SCAMPER & Empathy Safari.", activity: "Activity: SCAMPER brainstorming on everyday objects."}, {title: "The Lean Canvas", desc: "1-Page Business Model.", activity: "Activity: Filling out a Lean Canvas for a startup idea."}] }, { title: "Month 2: Pitching", sessions: [{title: "Build & Break", desc: "MVP Prototyping.", activity: "Activity: Cardboard prototyping of a product."}, {title: "Investor Day", desc: "Shark Tank simulation.", activity: "Activity: Pitching ideas to a panel of 'Sharks'."}] }] },
+                    { name: "Unit 2: Pro Communication", months: [{ title: "Month 3: Digital Presence", sessions: [{title: "The Perfect Ask", desc: "Email Etiquette & BLUF.", activity: "Activity: Drafting professional cold emails."}, {title: "The Brand Called You", desc: "LinkedIn & Resumes.", activity: "Activity: Peer review of resumes."}] }, { title: "Month 4: Oratory", sessions: [{title: "The Interview", desc: "STAR Method mastery.", activity: "Activity: Mock behavioral interviews."}, {title: "Comm Showcase", desc: "Public speaking event.", activity: "Activity: Giving a TED-style talk."}] }] },
+                    { name: "Unit 3: Legal Literacy", months: [{ title: "Month 5: Rights", sessions: [{title: "The Rule Book", desc: "Constitutional Values Auction.", activity: "Activity: Bidding on constitutional rights."}, {title: "RTI Act", desc: "Drafting an application.", activity: "Activity: Writing a mock RTI application."}] }, { title: "Month 6: Duties", sessions: [{title: "Consumer Rights", desc: "Mock Consumer Court.", activity: "Activity: Role-playing a consumer court case."}, {title: "Civic Pledge", desc: "Community stewardship.", activity: "Activity: Designing a community service pledge."}] }] },
+                    { name: "Unit 4: Leadership", months: [{ title: "Month 7: Team Dynamics", sessions: [{title: "Psychological Safety", desc: "Building trust in teams.", activity: "Activity: 'User Manual of Me' team sharing."}, {title: "Conflict Resolution", desc: "TKI Conflict Styles.", activity: "Activity: TKI Conflict Style assessment."}] }, { title: "Month 8: Governance", sessions: [{title: "Community Mapping", desc: "Assets and Leverage Points.", activity: "Activity: Mapping community assets."}, {title: "Leadership Oath", desc: "Passing the torch.", activity: "Activity: Writing a leadership legacy letter."}] }] }
                 ]
             },
             12: {
                 title: "The Launchpad", subtitle: "Resilience, Independence & Transition",
                 units: [
-                    { name: "Unit 1: Advanced Finance", months: [{ title: "Month 1: Survival", sessions: [{title: "The Poverty Penalty", desc: "SPENT Simulation."}, {title: "Wealth Engine", desc: "Compound Interest & Investing."}] }, { title: "Month 2: Leverage", sessions: [{title: "Credit Power", desc: "FICO & Predatory Lending."}, {title: "Financial Freedom", desc: "Retirement planning."}] }] },
-                    { name: "Unit 2: Mental Health", months: [{ title: "Month 3: Regulation", sessions: [{title: "Emotional Literacy", desc: "RULER Mood Meter."}, {title: "Stoicism", desc: "Dichotomy of Control."}] }, { title: "Month 4: Boundaries", sessions: [{title: "Roommate Protocol", desc: "Conflict & Boundaries."}, {title: "Transition Plan", desc: "Managing change anxiety."}] }] },
-                    { name: "Unit 3: Global Citizenship", months: [{ title: "Month 5: Culture", sessions: [{title: "Cultural Intelligence", desc: "Barnga Simulation."}, {title: "Ethical Consumerism", desc: "The Supply Chain Iceberg."}] }, { title: "Month 6: Impact", sessions: [{title: "Intro to SDGs", desc: "The Global To-Do List."}, {title: "Global Project", desc: "Designing an intervention."}] }] },
-                    { name: "Unit 4: Capstone", months: [{ title: "Month 7: Life Design", sessions: [{title: "Odyssey Planning", desc: "Designing 3 futures."}, {title: "Capstone Ideation", desc: "Lean Canvas for Life."}] }, { title: "Month 8: The Launch", sessions: [{title: "Prototyping", desc: "MVP of the future self."}, {title: "The Launch", desc: "Final TED-style showcase."}] }] }
+                    { name: "Unit 1: Advanced Finance", months: [{ title: "Month 1: Survival", sessions: [{title: "The Poverty Penalty", desc: "SPENT Simulation.", activity: "Activity: Reflection on the SPENT game."}, {title: "Wealth Engine", desc: "Compound Interest & Investing.", activity: "Activity: Comparison of investment vehicles."}] }, { title: "Month 2: Leverage", sessions: [{title: "Credit Power", desc: "FICO & Predatory Lending.", activity: "Activity: Analyzing credit card offers."}, {title: "Financial Freedom", desc: "Retirement planning.", activity: "Activity: Calculating the 'FIRE' number."}] }] },
+                    { name: "Unit 2: Mental Health", months: [{ title: "Month 3: Regulation", sessions: [{title: "Emotional Literacy", desc: "RULER Mood Meter.", activity: "Activity: Tracking mood patterns over a week."}, {title: "Stoicism", desc: "Dichotomy of Control.", activity: "Activity: Sorting worries into Control vs. No Control."}] }, { title: "Month 4: Boundaries", sessions: [{title: "Roommate Protocol", desc: "Conflict & Boundaries.", activity: "Activity: Drafting a roommate agreement."}, {title: "Transition Plan", desc: "Managing change anxiety.", activity: "Activity: Creating a college transition checklist."}] }] },
+                    { name: "Unit 3: Global Citizenship", months: [{ title: "Month 5: Culture", sessions: [{title: "Cultural Intelligence", desc: "Barnga Simulation.", activity: "Activity: Playing the Barnga card game."}, {title: "Ethical Consumerism", desc: "The Supply Chain Iceberg.", activity: "Activity: Tracing the supply chain of a t-shirt."}] }, { title: "Month 6: Impact", sessions: [{title: "Intro to SDGs", desc: "The Global To-Do List.", activity: "Activity: Matching local problems to SDGs."}, {title: "Global Project", desc: "Designing an intervention.", activity: "Activity: Pitching a social impact project."}] }] },
+                    { name: "Unit 4: Capstone", months: [{ title: "Month 7: Life Design", sessions: [{title: "Odyssey Planning", desc: "Designing 3 futures.", activity: "Activity: Creating 3 Odyssey Plan timelines."}, {title: "Capstone Ideation", desc: "Lean Canvas for Life.", activity: "Activity: Applying Lean Canvas to life goals."}] }, { title: "Month 8: The Launch", sessions: [{title: "Prototyping", desc: "MVP of the future self.", activity: "Activity: Conducting informational interviews."}, {title: "The Launch", desc: "Final TED-style showcase.", activity: "Activity: Presenting the 'Launch' speech."}] }] }
                 ]
             }
         };
 
         let selectedGrade = 7;
         function updateSyllabusUI() {
-            // Render Buttons
             const container = document.getElementById('grade-selector-container');
             container.innerHTML = '';
             [6, 7, 8, 9, 10, 11, 12].forEach(grade => {
@@ -878,13 +639,11 @@
                 container.appendChild(btn);
             });
 
-            // Render Header
             const data = curriculumData[selectedGrade];
             document.getElementById('grade-header').innerHTML = `
                 <div><h2 class="text-2xl font-bold text-slate-900">${data.title}</h2><p class="text-slate-500 font-medium mt-1">${data.subtitle}</p></div>
                 <div class="hidden md:block"><div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg font-bold text-xs flex items-center gap-2"><i data-lucide="calendar" width="16"></i> 8 Months • 24 Sessions</div></div>`;
 
-            // Render Roadmap
             const grid = document.getElementById('roadmap-grid');
             grid.innerHTML = '';
             data.units.forEach((unit, idx) => {
@@ -894,7 +653,7 @@
                     <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-indigo-200 transition group">
                         <h4 class="font-bold text-slate-700 mb-3 text-sm flex items-center gap-2"><i data-lucide="clock" width="14" class="text-indigo-400"></i> ${month.title}</h4>
                         <div class="space-y-2">${month.sessions.map(sess => `
-                            <button onclick="openModal('${unit.name.replace(/'/g, "\\'")}', '${month.title.replace(/'/g, "\\'")}', '${sess.title.replace(/'/g, "\\'")}', '${sess.desc.replace(/'/g, "\\'")}')" class="w-full text-left p-2 rounded hover:bg-white hover:shadow-sm text-xs font-semibold text-slate-600 flex items-center justify-between group/item">
+                            <button onclick="openModal('${unit.name.replace(/'/g, "\\'")}', '${month.title.replace(/'/g, "\\'")}', '${sess.title.replace(/'/g, "\\'")}', '${sess.desc.replace(/'/g, "\\'")}', '${sess.activity.replace(/'/g, "\\'")}')" class="w-full text-left p-2 rounded hover:bg-white hover:shadow-sm text-xs font-semibold text-slate-600 flex items-center justify-between group/item">
                                 <span>${sess.title}</span><i data-lucide="chevron-right" width="12" class="opacity-0 group-hover/item:opacity-100 text-indigo-500"></i>
                             </button>`).join('')}</div>
                     </div>`).join('');
@@ -905,10 +664,11 @@
             lucide.createIcons();
         }
 
-        function openModal(unit, month, title, desc) {
+        function openModal(unit, month, title, desc, outcome) {
             document.getElementById('modal-subtitle').textContent = `${unit} • ${month}`;
             document.getElementById('modal-title').textContent = title;
             document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('modal-outcome').textContent = outcome;
             document.getElementById('session-modal').classList.remove('hidden');
             document.getElementById('session-modal').classList.add('flex');
             lucide.createIcons();
@@ -925,8 +685,6 @@
             loadHPCRubric();
             updateSyllabusUI();
             lucide.createIcons();
-            
-            // Navbar Scroll
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('navbar');
                 if(window.scrollY > 50) nav.classList.add('shadow-md', 'bg-white/95');
