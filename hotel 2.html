@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caremel Corporate | Behavioral Transformation</title>
+    <meta name="description" content="We are Behavioral Transformation Partners offering Corporate Training, Leadership Development, and Emotional Intelligence Training for high-performance teams.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans, Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Contact Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#4f46e5',
+                            accent: '#2dd4bf',
+                            light: '#f8fafc'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Micro-interactions */
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .industry-card:hover .industry-bg {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-brand-light selection:bg-brand-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            
+            <!-- User Logo Code Integrated Here -->
+            <a href="#" onclick="switchPage('home')" class="flex items-center gap-2 group cursor-pointer">
+                <div class="font-bold text-2xl tracking-tighter text-slate-900">
+                    <span class="text-indigo-600">C</span>aremel<span class="text-indigo-600">.</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex space-x-8 items-center text-sm font-semibold text-slate-600">
+                <a href="#problem" class="hover:text-brand-primary transition-colors">The Crisis</a>
+                <a href="#approach" class="hover:text-brand-primary transition-colors">Our Approach</a>
+                <a href="#industries" class="hover:text-brand-primary transition-colors">Industries</a>
+                <a href="#contact" class="px-5 py-2.5 bg-brand-primary hover:brightness-110 text-white rounded-sm transition-all duration-300 shadow-md">Schedule Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-brand-dark">
+        <!-- Background Video Placeholder -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-brand-dark/70 z-10 mix-blend-multiply"></div>
+            <img src="https://images.pexels.com/photos/11897467/pexels-photo-11897467.jpeg" class="w-full h-full object-cover opacity-60">
+        </div>
+
+        <div class="relative z-20 text-center max-w-5xl px-6 mx-auto pt-16 animate-on-scroll is-visible">
+            <p class="text-brand-accent font-semibold tracking-widest uppercase text-sm mb-6 animate-pulse-slow">Behavioral Transformation Partners</p>
+            <h1 class="text-5xl md:text-7xl font-serif text-white font-bold leading-tight mb-8">
+                Building Exceptional People Behind <span class="italic text-slate-300">Exceptional Organizations.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light max-w-3xl mx-auto mb-10 leading-relaxed font-inter">
+                Technical expertise alone doesn't create memorable customer experiences, compassionate healthcare, inspiring classrooms, or high-performing leaders. <br><strong class="text-white font-medium">We develop the human behaviors that drive business performance.</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brand-primary hover:brightness-110 text-white font-semibold rounded-sm transition-all shadow-lg hover:shadow-brand-primary/20 text-sm tracking-wide">
+                    Schedule Consultation
+                </a>
+                <a href="#industries" class="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-sm transition-all backdrop-blur-sm border border-white/20 text-sm tracking-wide">
+                    Explore Programs
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-serif font-bold text-brand-dark mb-12">The Human Skills Crisis</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6 border-b border-slate-100 pb-6">
+                            <div class="w-12 h-12 bg-brand-light text-brand-primary flex items-center justify-center rounded-sm shrink-0 font-serif text-xl font-bold">1</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-1">Hospitality & Healthcare</h3>
+                                <p class="text-slate-600 font-inter">150,000+ talent shortage with 40%+ turnover. Clinical excellence is overshadowed by vast communication gaps.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 border-b border-slate-100 pb-6">
+                            <div class="w-12 h-12 bg-brand-light text-brand-primary flex items-center justify-center rounded-sm shrink-0 font-serif text-xl font-bold">2</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-1">Education & Sales</h3>
+                                <p class="text-slate-600 font-inter">Teaching without engagement. Closing deals without building trust. The human connection is failing.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-12 h-12 bg-brand-light text-brand-primary flex items-center justify-center rounded-sm shrink-0 font-serif text-xl font-bold">3</div>
+                            <div>
+                                <h3 class="text-xl font-bold text-brand-dark mb-1">Leadership</h3>
+                                <p class="text-slate-600 font-inter">Managing teams without coaching. Technical expertise creates capability. Human skills create impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brand-light p-12 rounded-sm border border-slate-200 animate-on-scroll">
+                    <p class="text-2xl md:text-3xl font-serif text-brand-dark leading-relaxed">
+                        Organizations invest millions in technical training. Yet the biggest business failures happen because of <span class="italic font-bold text-brand-primary">conduct...</span> not competencies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Traditional Training Fails -->
+    <section class="py-32 bg-brand-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-primary via-brand-dark to-brand-dark"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Why Most Training Doesn't Create Change</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg font-inter">Traditional workshops transfer information. We transform workplace behavior.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glassmorphism p-10 rounded-sm animate-on-scroll group hover:bg-white/10 transition-all duration-300">
+                    <div class="w-10 h-1 border-t-2 border-brand-accent mb-6"></div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Knowledge ≠ Behavior</h3>
+                    <p class="text-slate-300 leading-relaxed font-inter">Traditional workshops transfer information. Behavior changes only through practice, reflection, coaching, and repetition.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glassmorphism p-10 rounded-sm animate-on-scroll group hover:bg-white/10 transition-all duration-300 delay-100">
+                    <div class="w-10 h-1 border-t-2 border-brand-accent mb-6"></div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Context Matters</h3>
+                    <p class="text-slate-300 leading-relaxed font-inter">Every industry experiences emotional pressure differently. Generic communication workshops don't work for high-stakes environments.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glassmorphism p-10 rounded-sm animate-on-scroll group hover:bg-white/10 transition-all duration-300 delay-200">
+                    <div class="w-10 h-1 border-t-2 border-brand-accent mb-6"></div>
+                    <h3 class="text-2xl font-serif text-white mb-4">You Can't Improve What You Don't Measure</h3>
+                    <p class="text-slate-300 leading-relaxed font-inter">Power skills are rarely measured. Without behavioral assessments and coaching, organizations never see lasting change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Specific Programs -->
+    <section id="industries" class="py-32 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6">Industry-Specific Behavioral Excellence</h2>
+                <p class="text-slate-600 max-w-2xl text-lg font-inter">Exceptional organizations are built on exceptional conversations. Select your industry to explore our immersive programs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Hospitality -->
+                <div class="industry-card group relative h-[500px] overflow-hidden rounded-sm animate-on-scroll">
+                    <img src="https://images.pexels.com/photos/36921164/pexels-photo-36921164.jpeg" class="industry-bg absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-serif text-white font-bold mb-2">Hospitality Excellence</h3>
+                        <p class="text-brand-accent font-semibold mb-6">Creating unforgettable guest experiences through emotional intelligence.</p>
+                        <ul class="text-slate-300 space-y-2 text-sm font-inter opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <li>• Service Recovery & Handling Escalations</li>
+                            <li>• Guest Psychology & Cross-Cultural Communication</li>
+                            <li>• Emotional Resilience for Frontline Staff</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="industry-card group relative h-[500px] overflow-hidden rounded-sm animate-on-scroll delay-100">
+                    <img src="https://images.pexels.com/photos/6129158/pexels-photo-6129158.jpeg" class="industry-bg absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-serif text-white font-bold mb-2">Healthcare Communication</h3>
+                        <p class="text-brand-accent font-semibold mb-6">Empathy in clinical practice and reducing burnout.</p>
+                        <ul class="text-slate-300 space-y-2 text-sm font-inter opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <li>• Breaking Difficult News & Family Conflict</li>
+                            <li>• Interdisciplinary Collaboration</li>
+                            <li>• Patient Communication & Trust Building</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="industry-card group relative h-[500px] overflow-hidden rounded-sm animate-on-scroll">
+                    <img src="https://images.pexels.com/photos/10082704/pexels-photo-10082704.jpeg" class="industry-bg absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-serif text-white font-bold mb-2">Education Leadership</h3>
+                        <p class="text-brand-accent font-semibold mb-6">Curiosity-based teaching and emotional classroom management.</p>
+                        <ul class="text-slate-300 space-y-2 text-sm font-inter opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <li>• Psychological Safety & Student Coaching</li>
+                            <li>• Managing Difficult Parent Conversations</li>
+                            <li>• Experiential Learning Environments</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sales & Leadership -->
+                <div class="industry-card group relative h-[500px] overflow-hidden rounded-sm animate-on-scroll delay-100">
+                    <img src="https://images.pexels.com/photos/7869108/pexels-photo-7869108.jpeg" class="industry-bg absolute inset-0 w-full h-full object-cover transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/60 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <h3 class="text-3xl font-serif text-white font-bold mb-2">Sales & Leadership</h3>
+                        <p class="text-brand-accent font-semibold mb-6">Influence without authority and consultative selling.</p>
+                        <ul class="text-slate-300 space-y-2 text-sm font-inter opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <li>• Active Listening & Ethical Persuasion</li>
+                            <li>• Coaching Leadership & Managing Hybrid Teams</li>
+                            <li>• Feedback Conversations & Conflict Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Difference & Methodology -->
+    <section id="approach" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6">We Don't Deliver Workshops.<br><span class="italic text-brand-primary">We Change Behaviors.</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg font-inter">Behavior is the ultimate competitive advantage. Great leaders don't manage people. They develop them.</p>
+            </div>
+
+            <!-- Timeline Comparison -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+                <div class="bg-brand-light p-10 rounded-sm border border-slate-200 animate-on-scroll opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-slate-500 mb-8 uppercase tracking-widest text-sm">Traditional Training</h3>
+                    <div class="space-y-6 text-slate-600 font-semibold font-inter">
+                        <p>Lecture <span class="text-slate-400 ml-2">→</span></p>
+                        <p>Slides <span class="text-slate-400 ml-2">→</span></p>
+                        <p>Certificates <span class="text-slate-400 ml-2">→</span></p>
+                        <p class="text-red-500 line-through">Forgotten</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark p-10 rounded-sm shadow-2xl animate-on-scroll">
+                    <h3 class="text-xl font-bold text-brand-accent mb-8 uppercase tracking-widest text-sm">Our Behavioral Approach</h3>
+                    <div class="space-y-4 text-white font-medium text-lg font-inter">
+                        <p class="flex items-center"><span class="w-8 h-8 rounded-full border border-brand-accent text-brand-accent flex items-center justify-center text-xs mr-4">1</span> Assessment & Context</p>
+                        <p class="flex items-center"><span class="w-8 h-8 rounded-full border border-brand-accent text-brand-accent flex items-center justify-center text-xs mr-4">2</span> Interactive Simulations</p>
+                        <p class="flex items-center"><span class="w-8 h-8 rounded-full border border-brand-accent text-brand-accent flex items-center justify-center text-xs mr-4">3</span> Live Role Play & Coaching</p>
+                        <p class="flex items-center"><span class="w-8 h-8 rounded-full border border-brand-accent text-brand-accent flex items-center justify-center text-xs mr-4">4</span> Continuous Practice</p>
+                        <p class="flex items-center"><span class="w-8 h-8 rounded-full border border-brand-accent text-brand-accent flex items-center justify-center text-xs mr-4">5</span> Feedback & Tracking</p>
+                        <div class="h-px w-full bg-white/20 my-4"></div>
+                        <p class="text-brand-accent text-2xl font-serif italic pt-2">Measurable Business Results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section class="py-24 bg-brand-light border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brand-dark mb-16 text-center animate-on-scroll">Business Outcomes That Matter</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- KPI Cards -->
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Higher Satisfaction</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-75">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Increase Employee Turnover</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-150">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Better Experience</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-200">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Improved Engagement</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Stronger Leadership</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-75">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Higher Conversion</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-150">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Healthier Culture</h4>
+                </div>
+                <div class="bg-white p-6 rounded-sm shadow-sm border border-slate-100 text-center animate-on-scroll delay-200">
+                    <div class="text-brand-primary mb-4">
+                        <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <h4 class="font-bold text-brand-dark">Faster Conflict Resolution</h4>
+                </div>
+            </div>
+            
+            <div class="text-center mt-20 animate-on-scroll">
+                <p class="text-xl font-serif text-slate-600 italic mb-8">"Excellence is not a process. It is a behavior repeated consistently."</p>
+                <a href="#contact" class="inline-block px-10 py-4 bg-brand-dark hover:bg-brand-primary text-white font-semibold rounded-sm transition-all shadow-lg text-sm tracking-wide">Transform Your Organization</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Consultation / Contact Section -->
+    <section id="contact" class="py-24 bg-white border-t border-slate-200 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center animate-on-scroll">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-brand-dark mb-6">Let's Start the Transformation</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg font-inter mb-12">Reach out to discuss how we can tailor our behavioral programs for your organization.</p>
+            
+            <div class="inline-block bg-brand-light p-10 rounded-2xl shadow-sm border border-slate-200 w-full max-w-md">
+                <h3 class="text-2xl font-bold text-brand-dark mb-2">Schedule Consultation</h3>
+                <p class="text-slate-500 text-sm mb-6 font-inter">Connect with our team directly.</p>
+                
+                <!-- Injected Contact Info per Request -->
+                <div class="mt-6 space-y-4 text-base font-semibold text-slate-700">
+                    <div class="flex items-center justify-center gap-3"><i class="fas fa-envelope text-indigo-600 w-5 text-xl"></i> ishant@caremel.in</div>
+                    <div class="flex items-center justify-center gap-3"><i class="fas fa-mobile-alt text-indigo-600 w-5 text-xl"></i> +91- 7027613441</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    
+                    <!-- Footer Logo Duplicate -->
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="font-bold text-2xl tracking-tighter text-white">
+                            <span class="text-brand-primary">C</span>aremel<span class="text-brand-primary">.</span>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm font-inter">
+                        A research-driven behavioral transformation firm. We help HR Leaders, CEOs, and Directors turn human behavior into measurable business performance.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Solutions</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 font-inter">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Leadership Development</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Hospitality Training</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Healthcare Communication Training</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Sales Excellence Training</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Teacher Development Programs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Connect</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 font-inter">
+                        <li><a href="#contact" class="hover:text-brand-accent transition-colors">Schedule Consultation</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Organizational Assessments</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Executive Coaching</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 font-inter">
+                <p>&copy; 2026 Caremel Behavioral Transformation Partners. All rights reserved.</p>
+                <!-- Subtle SEO Keywords string for search crawlers -->
+                <p class="mt-4 md:mt-0 max-w-xl text-right opacity-50">Providing Corporate Training, Power Skills Training, Soft Skills Transformation, Employee Capability Building, and Corporate Learning Solutions.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Navbar scroll effect (keeps it consistently light to support the dark text logo, but shifts padding)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+        
+        // Provided switchPage function handler
+        function switchPage(pageName) {
+            console.log('Navigating to: ' + pageName);
+            // Example logic if needed for single-page routing: window.location.href = '/' + pageName;
+        }
+    </script>
+</body>
+</html>
